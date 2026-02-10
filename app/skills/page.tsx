@@ -36,7 +36,7 @@ export default function SkillsPage() {
             <CardContent>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
-                  <Badge key={skill} variant="outline" className="text-sm py-2 px-4">
+                  <Badge key={skill} className="border text-sm py-2 px-4">
                     {skill}
                   </Badge>
                 ))}

@@ -48,7 +48,7 @@ export default function ProjectsPage() {
                 <CardContent className="flex-1">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
+                      <Badge key={tag} className="bg-secondary text-secondary-foreground">
                         {tag}
                       </Badge>
                     ))}

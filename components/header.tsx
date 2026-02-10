@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
-import { Code } from "lucide-react";
+import { Code, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
+  const { resolvedTheme, setTheme } = useTheme();
+
   const navItems = [
     { href: "/about", label: "Hakkımda" },
     { href: "/projects", label: "Projeler" },
@@ -19,14 +25,17 @@ export function Header() {
         </Link>
         <div className="flex items-center gap-4">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
+            <Link key={item.href} href={item.href} className="text-sm font-medium hover:text-primary transition-colors">
               {item.label}
             </Link>
           ))}
+          <Button 
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} 
+            className="h-9 w-9 bg-transparent hover:bg-accent p-0 flex items-center justify-center" 
+            aria-label="Tema değiştir"
+          >
+            {resolvedTheme === "dark" ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+          </Button>
         </div>
       </div>
     </nav>

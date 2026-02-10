@@ -62,10 +62,10 @@ export default function Home() {
             </p>
           </div>
           <div className="flex gap-4">
-            <Button size="lg" asChild>
+            <Button asChild>
               <Link href="/projects">Projelerimi Gör</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button className="border border-input bg-background hover:bg-accent" asChild>
               <Link href="/contact">İletişime Geç</Link>
             </Button>
           </div>
@@ -119,7 +119,7 @@ export default function Home() {
                 <CardContent className="flex-1">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
+                      <Badge key={tag} className="bg-secondary text-secondary-foreground">
                         {tag}
                       </Badge>
                     ))}
@@ -147,7 +147,7 @@ export default function Home() {
             <CardContent>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
-                  <Badge key={skill} variant="outline" className="text-sm py-2 px-4">
+                  <Badge key={skill} className="border text-sm py-2 px-4">
                     {skill}
                   </Badge>
                 ))}
@@ -172,19 +172,19 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <Button variant="outline" size="lg" asChild>
+                <Button className="border border-input bg-background hover:bg-accent" asChild>
                   <a href="mailto:evren@example.com" className="flex items-center gap-2">
                     <Mail className="h-5 w-5" />
                     E-posta
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button className="border border-input bg-background hover:bg-accent" asChild>
                   <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <Github className="h-5 w-5" />
                     GitHub
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button className="border border-input bg-background hover:bg-accent" asChild>
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <Linkedin className="h-5 w-5" />
                     LinkedIn

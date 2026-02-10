@@ -23,19 +23,19 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <Button variant="outline" size="lg" asChild>
+                <Button className="border border-input bg-background hover:bg-accent" asChild>
                   <a href="mailto:evren@example.com" className="flex items-center gap-2">
                     <Mail className="h-5 w-5" />
                     E-posta
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button className="border border-input bg-background hover:bg-accent" asChild>
                   <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <Github className="h-5 w-5" />
                     GitHub
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button className="border border-input bg-background hover:bg-accent" asChild>
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <Linkedin className="h-5 w-5" />
                     LinkedIn
