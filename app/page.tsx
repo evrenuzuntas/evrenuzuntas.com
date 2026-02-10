@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -62,10 +63,10 @@ export default function Home() {
           </div>
           <div className="flex gap-4">
             <Button size="lg" asChild>
-              <a href="#projects">Projelerimi Gör</a>
+              <Link href="/projects">Projelerimi Gör</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="#contact">İletişime Geç</a>
+              <Link href="/contact">İletişime Geç</Link>
             </Button>
           </div>
         </div>
