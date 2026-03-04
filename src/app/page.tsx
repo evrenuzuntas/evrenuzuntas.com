@@ -1,3 +1,5 @@
+"use client";
+
 import { BentoBox } from "@/components/BentoBox";
 import { bentoItems } from "@/constants/bentoItems";
 
@@ -17,6 +19,9 @@ export default function Home() {
               content={item.content}
               contentAlign={item.contentAlign}
               className={item.className}
+              href={item.href}
+              onClick={item.onClick}
+              disabled={item.disabled}
             />
           ))}
         </div>

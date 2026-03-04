@@ -1,5 +1,19 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { User, MapPin, Mail, Code2, ArrowUpRight, Linkedin, Github, Cloud } from "lucide-react";
+
+function copyEmailToClipboard() {
+  const email = "evrenuzuntas@gmail.com";
+  if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(email).then(
+      () => alert("Kopyalandı!"),
+      () => alert("Kopyalama desteklenmiyor."),
+    );
+  } else {
+    alert("Kopyalandı!");
+  }
+}
 
 function YoutubeIcon({ className }: { className?: string }) {
   return (
@@ -19,6 +33,9 @@ export type BentoItem = {
   /** İçeriğin dikey hizalaması: start (üst), center, end (alt) */
   contentAlign?: "start" | "center" | "end";
   className?: string;
+  href?: string;
+  onClick?: () => void;
+  disabled?: boolean;
 };
 
 const TECH_STACK = ["Next.js", "React", "TypeScript", "Tailwind"];
@@ -46,6 +63,7 @@ export const bentoItems: BentoItem[] = [
     id: "youtube",
     spanX: 2,
     spanY: 1,
+    href: "https://youtube.com/@evoloper0",
     topLeft: (
       <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/70">
         <YoutubeIcon className="h-4 w-4" />
@@ -80,12 +98,9 @@ export const bentoItems: BentoItem[] = [
     spanX: 1,
     spanY: 1,
     contentAlign: "center",
+    onClick: copyEmailToClipboard,
     topLeft: <Mail className="h-4 w-4 text-white/60" strokeWidth={1.5} aria-hidden />,
-    content: (
-      <a href="mailto:hello@example.com" className="text-sm font-medium text-white/80 underline decoration-white/20 underline-offset-2 transition hover:text-white hover:decoration-white/40">
-        E-posta gönder
-      </a>
-    ),
+    content: <span className="text-sm font-medium text-white/80">E-posta adresini kopyala</span>,
   },
   {
     id: "tech-stack",
@@ -103,18 +118,32 @@ export const bentoItems: BentoItem[] = [
     ),
   },
   {
-    id: "social",
+    id: "linkedin",
     spanX: 1,
     spanY: 1,
+    href: "https://linkedin.com/in/evrenuzuntas",
     contentAlign: "center",
     content: (
-      <div className="flex items-center gap-3">
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-white/20 hover:text-white/90" aria-label="LinkedIn">
-          <Linkedin className="h-4 w-4" strokeWidth={1.5} />
-        </a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-white/20 hover:text-white/90" aria-label="GitHub">
-          <Github className="h-4 w-4" strokeWidth={1.5} />
-        </a>
+      <div className="flex flex-col items-center gap-2">
+        <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60">
+          <Linkedin className="h-4 w-4" strokeWidth={1.5} aria-hidden />
+        </div>
+        <span className="text-xs font-medium text-white/70">LinkedIn</span>
+      </div>
+    ),
+  },
+  {
+    id: "github",
+    spanX: 1,
+    spanY: 1,
+    href: "https://github.com/evoloper",
+    contentAlign: "center",
+    content: (
+      <div className="flex flex-col items-center gap-2">
+        <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60">
+          <Github className="h-4 w-4" strokeWidth={1.5} aria-hidden />
+        </div>
+        <span className="text-xs font-medium text-white/70">GitHub</span>
       </div>
     ),
   },
