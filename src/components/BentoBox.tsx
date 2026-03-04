@@ -47,7 +47,7 @@ export function BentoBox({
 
   return (
     <div className={`${mergedClassName} flex flex-col min-h-0`}>
-      <div className="flex flex-1 flex-col min-h-0 p-6 sm:p-8 gap-4">
+      <div className="flex flex-1 flex-col min-h-0 p-4 gap-3">
         {hasHeader && (
           <header className="flex justify-between items-start shrink-0">
             <div className="flex items-center justify-start">{topLeft}</div>
