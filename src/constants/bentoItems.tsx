@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { User, Navigation, Mail, Code2, Cloud } from "lucide-react";
+import { User, Navigation, Mail, Code2, Cloud, Copy } from "lucide-react";
 import { FaYoutube, FaLinkedinIn, FaGithub } from "react-icons/fa6";
 import ReactCountryFlag from "react-country-flag";
 
@@ -77,7 +77,14 @@ export const bentoItems: BentoItem[] = [
   {
     id: "contact",
     icon: <Mail />,
-    content: <span className="text-sm font-medium text-white/80">E-posta adresini kopyala</span>,
+    topRight: <Copy className="h-4 w-4 text-white/50" strokeWidth={2} />,
+    href: "mailto:evrenuzuntas@gmail.com",
+    content: (
+      <div className="flex flex-col gap-0.5">
+        <span className="text-sm font-medium text-white/80">evrenuzuntas</span>
+        <span className="text-sm font-medium text-white/50">@gmail.com</span>
+      </div>
+    ),
   },
   {
     id: "tech-stack",
