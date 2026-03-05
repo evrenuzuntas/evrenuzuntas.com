@@ -3,8 +3,8 @@ export const TECH_STACK = ["Next.js", "React", "TypeScript", "Tailwind"];
 export type BentoItemData = {
   id: string;
   type?: string;
-  spanX?: 1 | 2 | 3 | 4;
-  spanY?: 1 | 2 | 3 | 4;
+  spanX?: 1 | 2;
+  spanY?: 1 | 2;
   image?: string;
   href?: string;
   label?: string;

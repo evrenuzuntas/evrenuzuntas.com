@@ -140,8 +140,8 @@ function renderItem(item: BentoItemData) {
 
 export function BentoGrid() {
   return (
-    <div className="w-full max-w-[200px] md:max-w-[416px] lg:max-w-[848px] mx-auto">
-      <div className="grid grid-cols-[200px] md:grid-cols-[200px_200px] lg:grid-cols-[200px_200px_200px_200px] gap-4 auto-rows-[200px] overflow-hidden">{BENTO_ITEMS.map(renderItem)}</div>
+    <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
+      {BENTO_ITEMS.map(renderItem)}
     </div>
   );
 }
