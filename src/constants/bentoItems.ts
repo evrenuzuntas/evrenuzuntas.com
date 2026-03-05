@@ -4,41 +4,36 @@ export type BentoItemData = {
   id: string;
   spanX?: 1 | 2 | 3 | 4;
   spanY?: 1 | 2 | 3 | 4;
-  contentAlign?: "start" | "center" | "end";
-  icon?: string;
   image?: string;
-  title?: string;
-  subtitle?: string;
-  tags?: string[];
   href?: string;
-  email?: string;
+  label?: string;
+  sublabel?: string;
+  description?: string;
   badge?: string;
+  city?: string;
   countryCode?: string;
+  email?: string;
 };
 
 export const BENTO_ITEMS: BentoItemData[] = [
   {
     id: "bio",
-    icon: "user",
-    badge: "Open for roles",
-    title:
+    description:
       "Senior Fullstack Developer. Tech vlogger at @evoloper. Based in Eskişehir. Crafting clean code and high-quality content.",
+    badge: "Open for roles",
   },
   {
     id: "location",
-    icon: "navigation",
+    city: "Eskişehir",
     countryCode: "TR",
-    title: "Eskişehir, TR",
-    subtitle: "Hava Durumu",
   },
   {
     id: "youtube",
     spanX: 2,
     spanY: 2,
-    icon: "youtube",
     href: "https://youtube.com/@evoloper0",
-    title: "@evoloper YouTube kanalıma git",
-    subtitle: "Abone sayısı —",
+    label: "@evoloper YouTube kanalıma git",
+    sublabel: "Abone sayısı —",
   },
   {
     id: "photo",
@@ -46,27 +41,20 @@ export const BENTO_ITEMS: BentoItemData[] = [
   },
   {
     id: "contact",
-    icon: "mail",
     email: "evrenuzuntas@gmail.com",
   },
   {
     id: "tech-stack",
     spanX: 2,
-    icon: "code2",
-    tags: TECH_STACK,
   },
   {
     id: "linkedin",
-    icon: "linkedin",
     href: "https://linkedin.com/in/evrenuzuntas",
-    title: "LinkedIn",
-    contentAlign: "center",
+    label: "LinkedIn",
   },
   {
     id: "github",
-    icon: "github",
     href: "https://github.com/evoloper",
-    title: "GitHub",
-    contentAlign: "center",
+    label: "GitHub",
   },
 ];
