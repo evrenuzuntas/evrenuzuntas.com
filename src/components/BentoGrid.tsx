@@ -4,10 +4,16 @@ import { BentoBox } from "./BentoBox";
 import { BENTO_ITEMS, TECH_STACK, type BentoItemData } from "@/constants/bentoItems";
 import { User, Navigation, Mail, Code2, Cloud, Copy } from "lucide-react";
 import { FaYoutube, FaLinkedinIn, FaGithub } from "react-icons/fa6";
+import type { IconType } from "react-icons";
 import ReactCountryFlag from "react-country-flag";
 
+const SOCIAL_ICONS: Record<string, { icon: IconType; color: string }> = {
+  linkedin: { icon: FaLinkedinIn, color: "text-[#0A66C2]" },
+  github: { icon: FaGithub, color: "text-white/80" },
+};
+
 function renderItem(item: BentoItemData) {
-  switch (item.id) {
+  switch (item.type ?? item.id) {
     case "bio":
       return (
         <BentoBox
@@ -106,7 +112,10 @@ function renderItem(item: BentoItemData) {
         />
       );
 
-    case "linkedin":
+    case "social": {
+      const social = SOCIAL_ICONS[item.id];
+      if (!social) return null;
+      const Icon = social.icon;
       return (
         <BentoBox
           key={item.id}
@@ -115,30 +124,14 @@ function renderItem(item: BentoItemData) {
           content={
             <div className="flex flex-col items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5">
-                <FaLinkedinIn className="h-5 w-5 text-[#0A66C2]" />
+                <Icon className={`h-5 w-5 ${social.color}`} />
               </div>
               <span className="text-xs font-medium text-white/70">{item.label}</span>
             </div>
           }
         />
       );
-
-    case "github":
-      return (
-        <BentoBox
-          key={item.id}
-          href={item.href}
-          contentAlign="center"
-          content={
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5">
-                <FaGithub className="h-5 w-5 text-white/80" />
-              </div>
-              <span className="text-xs font-medium text-white/70">{item.label}</span>
-            </div>
-          }
-        />
-      );
+    }
 
     default:
       return null;

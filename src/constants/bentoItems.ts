@@ -2,6 +2,7 @@ export const TECH_STACK = ["Next.js", "React", "TypeScript", "Tailwind"];
 
 export type BentoItemData = {
   id: string;
+  type?: string;
   spanX?: 1 | 2 | 3 | 4;
   spanY?: 1 | 2 | 3 | 4;
   image?: string;
@@ -49,11 +50,13 @@ export const BENTO_ITEMS: BentoItemData[] = [
   },
   {
     id: "linkedin",
+    type: "social",
     href: "https://linkedin.com/in/evrenuzuntas",
     label: "LinkedIn",
   },
   {
     id: "github",
+    type: "social",
     href: "https://github.com/evoloper",
     label: "GitHub",
   },
