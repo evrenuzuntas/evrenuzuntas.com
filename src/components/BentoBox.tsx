@@ -1,117 +1,56 @@
-import type { ReactNode } from "react";
+import type { ReactNode, ElementType } from "react";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 type BentoBoxProps = {
-  spanX: 1 | 2 | 3 | 4;
-  spanY: 1 | 2 | 3 | 4;
+  spanX?: 1 | 2 | 3 | 4;
+  spanY?: 1 | 2 | 3 | 4;
+  /** Küçük ikon kısayolu -- otomatik olarak h-4 w-4 text-white/60 stilini alır */
+  icon?: ReactNode;
+  /** Tam kontrol istersen topLeft'i doğrudan geç (icon'u override eder) */
   topLeft?: ReactNode;
   topRight?: ReactNode;
   content?: ReactNode;
-  /** İçeriğin dikey hizalaması: üst, orta, alt */
   contentAlign?: "start" | "center" | "end";
+  /** Görselin URL'i -- verilirse kutuyu tamamen kaplar */
+  image?: string;
   className?: string;
-  /** Link varsa kutu <a> olarak render edilir (dış linklerde target="_blank") */
+  /** Link varsa otomatik ArrowUpRight gösterilir (topRight boşsa) */
   href?: string;
-  /** href yoksa ve onClick varsa kutu <button> olarak render edilir */
   onClick?: () => void;
-  /** true ise tıklama devre dışı, opaklık düşer */
-  disabled?: boolean;
 };
 
-const isExternalHref = (href: string) =>
-  href.startsWith("http://") || href.startsWith("https://");
+const colSpan: Record<number, string> = { 1: "col-span-1", 2: "col-span-2", 3: "col-span-3", 4: "col-span-4" };
+const rowSpan: Record<number, string> = { 1: "row-span-1", 2: "row-span-2", 3: "row-span-3", 4: "row-span-4" };
+const justify: Record<string, string> = { start: "justify-start", center: "justify-center", end: "justify-end" };
 
-export function BentoBox({
-  spanX,
-  spanY,
-  topLeft,
-  topRight,
-  content,
-  contentAlign = "start",
-  className,
-  href,
-  onClick,
-  disabled = false,
-}: BentoBoxProps) {
-  const colSpanClass =
-    {
-      1: "col-span-1",
-      2: "col-span-2",
-      3: "col-span-3",
-      4: "col-span-4",
-    }[spanX] ?? "col-span-1";
+export function BentoBox({ spanX = 1, spanY = 1, icon, topLeft, topRight, content, contentAlign = "end", image, className = "", href, onClick }: BentoBoxProps) {
+  const isExternal = href?.startsWith("http");
+  const Tag: ElementType = href ? "a" : onClick ? "button" : "div";
 
-  const rowSpanClass =
-    {
-      1: "row-span-1",
-      2: "row-span-2",
-      3: "row-span-3",
-      4: "row-span-4",
-    }[spanY] ?? "row-span-1";
+  const tagProps = Tag === "a" ? { href, ...(isExternal && { target: "_blank", rel: "noopener noreferrer" }) } : Tag === "button" ? { type: "button" as const, onClick } : {};
 
-  const isClickable = !disabled && (href != null || (onClick != null && href == null));
-  const baseClasses =
-    "rounded-3xl border border-white/10 bg-gradient-to-br from-[#141414] to-[#0c0c0c] shadow-[0_0_0_1px_rgba(255,255,255,0.03)] transition-[border-color,transform,box-shadow] duration-300 hover:border-white/20 hover:scale-[1.01]" +
-    (isClickable ? " cursor-pointer hover:shadow-[0_0_24px_rgba(255,255,255,0.06)]" : "") +
-    (disabled ? " pointer-events-none opacity-60" : "");
-
-  const mergedClassName = [baseClasses, colSpanClass, rowSpanClass, className]
-    .filter(Boolean)
-    .join(" ");
-
-  const hasHeader = topLeft != null || topRight != null;
-
-  const inner = (
-    <div className="flex flex-1 flex-col min-h-0 p-4 gap-3">
-      {hasHeader && (
-        <header className="flex justify-between items-start shrink-0">
-          <div className="flex items-center justify-start">{topLeft}</div>
-          <div className="flex items-center justify-end">{topRight}</div>
-        </header>
-      )}
-      {content != null && (
-        <div
-          className={`flex-1 flex flex-col min-h-0 ${
-            contentAlign === "center"
-              ? "justify-center"
-              : contentAlign === "end"
-                ? "justify-end"
-                : "justify-start"
-          }`}
-        >
-          {content}
-        </div>
-      )}
-    </div>
-  );
-
-  if (href != null && !disabled) {
-    const isExternal = isExternalHref(href);
+  if (image) {
     return (
-      <a
-        href={href}
-        className={`${mergedClassName} flex flex-col min-h-0 no-underline text-inherit`}
-        {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
-      >
-        {inner}
-      </a>
+      <Tag {...tagProps} className={["relative overflow-hidden rounded-3xl border border-white/10 no-underline", (href || onClick) && "cursor-pointer", colSpan[spanX], rowSpan[spanY], className].filter(Boolean).join(" ")}>
+        <Image src={image} alt="" fill className="object-cover" />
+      </Tag>
     );
   }
 
-  if (onClick != null && href == null && !disabled) {
-    return (
-      <button
-        type="button"
-        onClick={onClick}
-        className={`${mergedClassName} flex flex-col min-h-0 w-full text-left border-0 bg-transparent p-0`}
-      >
-        {inner}
-      </button>
-    );
-  }
+  const resolvedTopLeft = topLeft ?? (icon && <span className="h-4 w-4 text-white/60 [&>svg]:h-full [&>svg]:w-full">{icon}</span>);
+  const resolvedTopRight = topRight ?? (href && <ArrowUpRight className="h-4 w-4 text-white/50" strokeWidth={2} />);
 
   return (
-    <div className={`${mergedClassName} flex flex-col min-h-0`}>
-      {inner}
-    </div>
+    <Tag {...tagProps} className={["flex flex-col rounded-3xl border border-white/10 bg-gradient-to-br from-[#141414] to-[#0c0c0c] p-4 gap-3 text-white/90 no-underline text-inherit", (href || onClick) && "cursor-pointer", colSpan[spanX], rowSpan[spanY], className].filter(Boolean).join(" ")}>
+      {(resolvedTopLeft || resolvedTopRight) && (
+        <header className="flex items-start justify-between shrink-0">
+          <div>{resolvedTopLeft}</div>
+          <div>{resolvedTopRight}</div>
+        </header>
+      )}
+
+      {content && <div className={`flex-1 flex flex-col min-h-0 ${justify[contentAlign]}`}>{content}</div>}
+    </Tag>
   );
 }

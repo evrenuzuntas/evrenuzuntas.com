@@ -10,19 +10,7 @@ export default function Home() {
       <div className="w-full max-w-[200px] md:max-w-[416px] lg:max-w-[848px] mx-auto">
         <div className="grid grid-cols-[200px] md:grid-cols-[200px_200px] lg:grid-cols-[200px_200px_200px_200px] gap-4 auto-rows-[200px] overflow-hidden">
           {bentoItems.map((item) => (
-            <BentoBox
-              key={item.id}
-              spanX={item.spanX}
-              spanY={item.spanY}
-              topLeft={item.topLeft}
-              topRight={item.topRight}
-              content={item.content}
-              contentAlign={item.contentAlign}
-              className={item.className}
-              href={item.href}
-              onClick={item.onClick}
-              disabled={item.disabled}
-            />
+            <BentoBox key={item.id} {...item} />
           ))}
         </div>
       </div>
