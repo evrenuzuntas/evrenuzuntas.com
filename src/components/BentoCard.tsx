@@ -6,30 +6,16 @@ export function BentoCard({ icon, stat, image, label, sublabel, link }: BentoIte
   const iconData = icon ? ICON_MAP[icon] : null;
   const IconComp = iconData?.icon;
 
-  const topRight = stat ? (
-    <span className="text-sm font-semibold text-white/60">{stat}</span>
-  ) : link ? (
-    <ArrowUpRight className="h-4 w-4 text-white/40" strokeWidth={2} />
-  ) : null;
-
-  const hasHeader = !!(IconComp || topRight);
-
   if (image) {
     return (
       <>
         <NextImage src={image} alt="" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
-        {hasHeader && (
+        {(IconComp || stat) && (
           <div className="absolute top-3 left-3 right-3 flex items-start justify-between z-10">
-            {IconComp ? (
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black/30 backdrop-blur-sm">
-                <IconComp className={`h-4 w-4 ${iconData!.color}`} />
-              </div>
-            ) : (
-              <div />
-            )}
-            {topRight}
+            {IconComp ? <IconComp className={`h-5 w-5 ${iconData!.color}`} /> : <span />}
+            {stat && <span className="text-sm font-semibold text-white/60">{stat}</span>}
           </div>
         )}
 
@@ -45,10 +31,14 @@ export function BentoCard({ icon, stat, image, label, sublabel, link }: BentoIte
 
   return (
     <>
-      {hasHeader && (
+      {(IconComp || stat || link) && (
         <header className="flex items-start justify-between shrink-0">
-          {IconComp ? <IconComp className={`h-5 w-5 ${iconData!.color}`} /> : <div />}
-          {topRight}
+          {IconComp ? <IconComp className={`h-5 w-5 ${iconData!.color}`} /> : <span />}
+          {stat ? (
+            <span className="text-sm font-semibold text-white/60">{stat}</span>
+          ) : link ? (
+            <ArrowUpRight className="h-4 w-4 text-white/40" strokeWidth={2} />
+          ) : null}
         </header>
       )}
 
