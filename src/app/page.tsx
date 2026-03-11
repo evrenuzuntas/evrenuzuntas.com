@@ -32,14 +32,7 @@ export default function Home() {
           const CardContent = CARD_COMPONENTS[item.type];
           if (!CardContent) return null;
           return (
-            <BentoBox
-              key={item.id}
-              spanX={item.spanX}
-              spanY={item.spanY}
-              href={item.link}
-              onClick={item.email ? () => navigator.clipboard.writeText(item.email!) : undefined}
-              variant={item.image ? "image" : "default"}
-            >
+            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link} onClick={item.email ? () => navigator.clipboard.writeText(item.email!) : undefined} variant={item.image ? "image" : "default"}>
               <CardContent {...item} />
             </BentoBox>
           );
