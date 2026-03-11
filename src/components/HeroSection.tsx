@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import dayjs from "dayjs";
 import { FaXTwitter, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube } from "react-icons/fa6";
-import { SOCIALS } from "@/constants/socials";
+import { SOCIALS } from "@/constants/bentoItems";
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   x: <FaXTwitter />,
