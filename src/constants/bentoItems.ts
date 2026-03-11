@@ -107,8 +107,11 @@ export const BENTO_ITEMS: BentoItemData[] = [
     image: "/joy.jpg",
     label: "Joy",
   },
+];
+
+export const YOUTUBE_ITEMS: BentoItemData[] = [
   {
-    id: "youtube",
+    id: "youtube-1",
     spanX: 2,
     spanY: 1,
     icon: "youtube",
@@ -117,7 +120,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
     image: "/youtube/77t-FTb8D9I-SD.jpg",
   },
   {
-    id: "youtube",
+    id: "youtube-2",
     spanX: 2,
     spanY: 1,
     icon: "youtube",
@@ -126,7 +129,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
     image: "/youtube/aaLbmi7sXmg-SD.jpg",
   },
   {
-    id: "youtube",
+    id: "youtube-3",
     spanX: 2,
     spanY: 1,
     icon: "youtube",
@@ -135,7 +138,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
     image: "/youtube/aEr9WDp5z5g-SD.jpg",
   },
   {
-    id: "youtube",
+    id: "youtube-4",
     spanX: 2,
     spanY: 1,
     icon: "youtube",
@@ -145,7 +148,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
     stat: "100+",
   },
   {
-    id: "youtube",
+    id: "youtube-5",
     spanX: 2,
     spanY: 1,
     icon: "youtube",
@@ -155,7 +158,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
     stat: "100+",
   },
   {
-    id: "youtube",
+    id: "youtube-6",
     spanX: 2,
     spanY: 1,
     icon: "youtube",
@@ -165,7 +168,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
     stat: "100+",
   },
   {
-    id: "youtube",
+    id: "youtube-7",
     spanX: 2,
     spanY: 1,
     icon: "youtube",
