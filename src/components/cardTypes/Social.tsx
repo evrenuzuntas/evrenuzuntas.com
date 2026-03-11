@@ -1,11 +1,11 @@
 import { SOCIAL_ICONS, type BentoItemData } from "@/constants/bentoItems";
 
-export function Social({ id, href, stat }: BentoItemData) {
+export function Social({ id, link, stat }: BentoItemData) {
   const social = SOCIAL_ICONS[id];
   if (!social) return null;
   const Icon = social.icon;
 
-  const displayUrl = href?.replace(/^https?:\/\//, "");
+  const displayUrl = link?.replace(/^https?:\/\//, "");
 
   return (
     <div className="flex-1 flex flex-col justify-between">

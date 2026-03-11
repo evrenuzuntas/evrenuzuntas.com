@@ -40,7 +40,8 @@ export type BentoItemData = {
   spanX?: 1 | 2;
   spanY?: 1 | 2;
   image?: string;
-  href?: string;
+  icon?: string;
+  link?: string;
   label?: string;
   sublabel?: string;
   description?: string;
@@ -62,9 +63,8 @@ export const HEADER_SOCIALS = [
 export const BENTO_ITEMS: BentoItemData[] = [
   {
     id: "bio",
-    type: "bio",
-    description: "Senior Fullstack Developer. Tech vlogger at @evoloper. Based in Eskişehir. Crafting clean code and high-quality content.",
-    badge: "Open for roles",
+    type: "text",
+    description: "Senior Dev & Tech Creator. Based in Eskişehir. Open for new roles.",
   },
   {
     id: "location",
@@ -77,13 +77,14 @@ export const BENTO_ITEMS: BentoItemData[] = [
     type: "video",
     spanX: 2,
     spanY: 2,
-    href: "https://youtube.com/@evoloper0",
+    link: "https://youtube.com/@evoloper0",
     label: "@evoloper YouTube kanalıma git",
     sublabel: "Abone sayısı —",
   },
   {
     id: "photo",
     type: "image",
+    label: "Let's work together",
     image: "/photo.jpg",
   },
   {
@@ -94,14 +95,14 @@ export const BENTO_ITEMS: BentoItemData[] = [
   {
     id: "linkedin",
     type: "social",
-    href: "https://linkedin.com/in/evrenuzuntas",
+    link: "https://linkedin.com/in/evrenuzuntas",
     label: "LinkedIn",
     stat: "500+",
   },
   {
     id: "github",
     type: "social",
-    href: "https://github.com/evoloper",
+    link: "https://github.com/evoloper",
     label: "GitHub",
     stat: "20",
   },

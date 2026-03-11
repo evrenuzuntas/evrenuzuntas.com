@@ -5,7 +5,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { BentoBox } from "@/components/BentoBox";
 import { BENTO_ITEMS, type BentoItemData } from "@/constants/bentoItems";
 
-import { Bio } from "@/components/cardTypes/Bio";
+import { Text } from "@/components/cardTypes/Text";
 import { Location } from "@/components/cardTypes/Location";
 import { Email } from "@/components/cardTypes/Email";
 import { Link } from "@/components/cardTypes/Link";
@@ -14,7 +14,7 @@ import { Video } from "@/components/cardTypes/Video";
 import { ImageCard } from "@/components/cardTypes/Image";
 
 const CARD_COMPONENTS: Record<string, ComponentType<BentoItemData>> = {
-  bio: Bio,
+  text: Text,
   location: Location,
   video: Video,
   image: ImageCard,
@@ -36,7 +36,7 @@ export default function Home() {
               key={item.id}
               spanX={item.spanX}
               spanY={item.spanY}
-              href={item.href}
+              href={item.link}
               onClick={item.email ? () => navigator.clipboard.writeText(item.email!) : undefined}
               variant={item.image ? "image" : "default"}
             >
