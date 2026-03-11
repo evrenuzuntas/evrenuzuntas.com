@@ -34,8 +34,6 @@ export const SOCIAL_ICONS: Record<string, { icon: IconType; color: string }> = {
   hashnode: { icon: FaHashnode, color: "text-[#2962FF]" },
 };
 
-export const TECH_STACK = ["Next.js", "React", "TypeScript", "Tailwind"];
-
 export type BentoItemData = {
   id: string;
   type: string;
@@ -50,9 +48,10 @@ export type BentoItemData = {
   city?: string;
   countryCode?: string;
   email?: string;
+  stat?: string;
 };
 
-export const SOCIALS = [
+export const HEADER_SOCIALS = [
   { id: "x", href: "https://x.com/evrenuzuntas", label: "X" },
   { id: "instagram", href: "https://instagram.com/evrenuzuntas", label: "Instagram" },
   { id: "linkedin", href: "https://linkedin.com/in/evrenuzuntas", label: "LinkedIn" },
@@ -93,20 +92,17 @@ export const BENTO_ITEMS: BentoItemData[] = [
     email: "evrenuzuntas@gmail.com",
   },
   {
-    id: "tech-stack",
-    type: "link",
-    spanX: 2,
-  },
-  {
     id: "linkedin",
     type: "social",
     href: "https://linkedin.com/in/evrenuzuntas",
     label: "LinkedIn",
+    stat: "500+",
   },
   {
     id: "github",
     type: "social",
     href: "https://github.com/evoloper",
     label: "GitHub",
+    stat: "20",
   },
 ];

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import dayjs from "dayjs";
 import { FaXTwitter, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube } from "react-icons/fa6";
-import { SOCIALS } from "@/constants/bentoItems";
+import { HEADER_SOCIALS } from "@/constants/bentoItems";
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   x: <FaXTwitter />,
@@ -59,7 +59,7 @@ export function HeroSection() {
 
       {/* Social media bar */}
       <div className="relative z-10 flex items-center gap-2.5">
-        {SOCIALS.map((s) => (
+        {HEADER_SOCIALS.map((s) => (
           <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white/60 transition-all duration-200 hover:bg-white/10 hover:text-white hover:scale-105">
             <span className="text-[17px]">{SOCIAL_ICONS[s.id]}</span>
           </a>
