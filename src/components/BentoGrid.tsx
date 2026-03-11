@@ -1,16 +1,10 @@
 "use client";
 
 import { BentoBox } from "./BentoBox";
-import { BENTO_ITEMS, TECH_STACK, type BentoItemData } from "@/constants/bentoItems";
+import { BENTO_ITEMS, TECH_STACK, SOCIAL_ICONS, type BentoItemData } from "@/constants/bentoItems";
 import { User, Navigation, Mail, Code2, Cloud, Copy } from "lucide-react";
-import { FaYoutube, FaLinkedinIn, FaGithub } from "react-icons/fa6";
-import type { IconType } from "react-icons";
+import { FaYoutube } from "react-icons/fa6";
 import ReactCountryFlag from "react-country-flag";
-
-const SOCIAL_ICONS: Record<string, { icon: IconType; color: string }> = {
-  linkedin: { icon: FaLinkedinIn, color: "text-[#0A66C2]" },
-  github: { icon: FaGithub, color: "text-white/80" },
-};
 
 function renderItem(item: BentoItemData) {
   switch (item.type ?? item.id) {

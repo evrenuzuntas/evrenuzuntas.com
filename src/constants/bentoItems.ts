@@ -1,3 +1,39 @@
+import type { IconType } from "react-icons";
+import { FaLinkedinIn, FaGithub, FaXTwitter, FaInstagram, FaFacebookF, FaYoutube, FaTiktok, FaDiscord, FaTelegram, FaRedditAlien, FaTwitch, FaMedium, FaDev, FaStackOverflow, FaDribbble, FaBehance, FaPinterestP, FaSnapchat, FaWhatsapp, FaSpotify, FaSoundcloud, FaSteam, FaCodepen, FaFigma, FaMastodon, FaThreads, FaBluesky, FaPatreon, FaHashnode } from "react-icons/fa6";
+
+export const SOCIAL_ICONS: Record<string, { icon: IconType; color: string }> = {
+  linkedin: { icon: FaLinkedinIn, color: "text-[#0A66C2]" },
+  github: { icon: FaGithub, color: "text-white/80" },
+  x: { icon: FaXTwitter, color: "text-white" },
+  twitter: { icon: FaXTwitter, color: "text-white" },
+  instagram: { icon: FaInstagram, color: "text-[#E4405F]" },
+  facebook: { icon: FaFacebookF, color: "text-[#1877F2]" },
+  youtube: { icon: FaYoutube, color: "text-[#FF0000]" },
+  tiktok: { icon: FaTiktok, color: "text-white" },
+  discord: { icon: FaDiscord, color: "text-[#5865F2]" },
+  telegram: { icon: FaTelegram, color: "text-[#26A5E4]" },
+  reddit: { icon: FaRedditAlien, color: "text-[#FF4500]" },
+  twitch: { icon: FaTwitch, color: "text-[#9146FF]" },
+  medium: { icon: FaMedium, color: "text-white/80" },
+  devto: { icon: FaDev, color: "text-white/80" },
+  stackoverflow: { icon: FaStackOverflow, color: "text-[#F58025]" },
+  dribbble: { icon: FaDribbble, color: "text-[#EA4C89]" },
+  behance: { icon: FaBehance, color: "text-[#1769FF]" },
+  pinterest: { icon: FaPinterestP, color: "text-[#BD081C]" },
+  snapchat: { icon: FaSnapchat, color: "text-[#FFFC00]" },
+  whatsapp: { icon: FaWhatsapp, color: "text-[#25D366]" },
+  spotify: { icon: FaSpotify, color: "text-[#1DB954]" },
+  soundcloud: { icon: FaSoundcloud, color: "text-[#FF5500]" },
+  steam: { icon: FaSteam, color: "text-white/80" },
+  codepen: { icon: FaCodepen, color: "text-white/80" },
+  figma: { icon: FaFigma, color: "text-[#F24E1E]" },
+  mastodon: { icon: FaMastodon, color: "text-[#6364FF]" },
+  threads: { icon: FaThreads, color: "text-white" },
+  bluesky: { icon: FaBluesky, color: "text-[#0085FF]" },
+  patreon: { icon: FaPatreon, color: "text-[#FF424D]" },
+  hashnode: { icon: FaHashnode, color: "text-[#2962FF]" },
+};
+
 export const TECH_STACK = ["Next.js", "React", "TypeScript", "Tailwind"];
 
 export type BentoItemData = {
@@ -19,8 +55,7 @@ export type BentoItemData = {
 export const BENTO_ITEMS: BentoItemData[] = [
   {
     id: "bio",
-    description:
-      "Senior Fullstack Developer. Tech vlogger at @evoloper. Based in Eskişehir. Crafting clean code and high-quality content.",
+    description: "Senior Fullstack Developer. Tech vlogger at @evoloper. Based in Eskişehir. Crafting clean code and high-quality content.",
     badge: "Open for roles",
   },
   {
