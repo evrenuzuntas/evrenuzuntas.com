@@ -38,7 +38,7 @@ export const TECH_STACK = ["Next.js", "React", "TypeScript", "Tailwind"];
 
 export type BentoItemData = {
   id: string;
-  type?: string;
+  type: string;
   spanX?: 1 | 2;
   spanY?: 1 | 2;
   image?: string;
@@ -55,16 +55,19 @@ export type BentoItemData = {
 export const BENTO_ITEMS: BentoItemData[] = [
   {
     id: "bio",
+    type: "bio",
     description: "Senior Fullstack Developer. Tech vlogger at @evoloper. Based in Eskişehir. Crafting clean code and high-quality content.",
     badge: "Open for roles",
   },
   {
     id: "location",
+    type: "location",
     city: "Eskişehir",
     countryCode: "TR",
   },
   {
     id: "youtube",
+    type: "video",
     spanX: 2,
     spanY: 2,
     href: "https://youtube.com/@evoloper0",
@@ -73,14 +76,17 @@ export const BENTO_ITEMS: BentoItemData[] = [
   },
   {
     id: "photo",
+    type: "image",
     image: "/photo.jpg",
   },
   {
     id: "contact",
+    type: "email",
     email: "evrenuzuntas@gmail.com",
   },
   {
     id: "tech-stack",
+    type: "link",
     spanX: 2,
   },
   {
