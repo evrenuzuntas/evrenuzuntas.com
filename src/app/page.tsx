@@ -5,6 +5,7 @@ import { BentoBox } from "@/components/BentoBox";
 import { BentoCard } from "@/components/BentoCard";
 import { BENTO_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS } from "@/constants/bentoItems";
 import { FaCode, FaYoutube } from "react-icons/fa6";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
       </div>
 
       {/* YouTube Items  */}
-      <div className="flex items-center gap-4 my-10 max-w-[832px] mx-auto">
+      <div id="youtube" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/20" />
         <a href="https://youtube.com/@evoloper0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/60 hover:text-[#FF0000] transition-colors duration-300 group">
           <FaYoutube className="text-[#FF0000] text-2xl group-hover:scale-110 transition-transform duration-300" />
@@ -37,9 +38,9 @@ export default function Home() {
       </div>
 
       {/* Software Development */}
-      <div className="flex items-center gap-4 my-10 max-w-[832px] mx-auto">
+      <div id="software" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/20" />
-        <FaCode className="text-[#FF0000] text-2xl group-hover:scale-110 transition-transform duration-300" />
+        <FaCode className="text-[#42A5F5] text-2xl group-hover:scale-110 transition-transform duration-300" />
         <span className="text-sm font-medium tracking-wider uppercase">Software Development</span>
         <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/20" />
       </div>
@@ -51,6 +52,7 @@ export default function Home() {
           </BentoBox>
         ))}
       </div>
+      <ScrollToTop />
     </main>
   );
 }
