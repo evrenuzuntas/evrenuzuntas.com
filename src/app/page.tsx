@@ -6,6 +6,7 @@ import { BentoCard } from "@/components/BentoCard";
 import { BENTO_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS } from "@/constants/bentoItems";
 import { FaCode, FaYoutube } from "react-icons/fa6";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -52,6 +53,7 @@ export default function Home() {
           </BentoBox>
         ))}
       </div>
+      <Footer />
       <ScrollToTop />
     </main>
   );
