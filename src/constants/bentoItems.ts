@@ -78,6 +78,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
     stat: "TR",
     label: "Eskişehir, TR",
     sublabel: "Hava Durumu",
+    image: "/world.png",
   },
   {
     id: "contact",
