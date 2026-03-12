@@ -331,6 +331,7 @@ export const SOFTWARE_ITEMS: BentoItemData[] = [
     icon: "website",
     label: "IKAM - Replacement vehicle platform",
     image: "/software/ikam.jpg",
+    stat: "10000",
   },
   {
     id: "linkedin",

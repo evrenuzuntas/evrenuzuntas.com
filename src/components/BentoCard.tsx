@@ -14,14 +14,14 @@ export function BentoCard({ icon, stat, image, label, sublabel, link }: BentoIte
 
   const iconShadow = img
     ? "[filter:drop-shadow(0_0_3px_rgba(0,0,0,1))_drop-shadow(0_0_10px_rgba(0,0,0,1))_drop-shadow(0_0_24px_rgba(0,0,0,0.8))_drop-shadow(0_0_48px_rgba(0,0,0,0.5))]"
-    : "drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] drop-shadow-[0_0_24px_rgba(255,255,255,0.08)]";
+    : "[filter:drop-shadow(0_0_10px_rgba(255,255,255,0.15))_drop-shadow(0_0_24px_rgba(255,255,255,0.08))]";
 
   const textShadow = img
-    ? "[text-shadow:0_0_6px_rgba(0,0,0,1),0_0_16px_rgba(0,0,0,0.9),0_0_36px_rgba(0,0,0,0.7),0_0_60px_rgba(0,0,0,0.4)]"
-    : "[text-shadow:0_0_8px_rgba(255,255,255,0.15),0_0_20px_rgba(255,255,255,0.08),0_0_40px_rgba(255,255,255,0.04)]";
+    ? "[text-shadow:0_1px_3px_rgba(0,0,0,0.8),0_0_8px_rgba(0,0,0,0.4)]"
+    : "[text-shadow:0_0_8px_rgba(255,255,255,0.15),0_0_20px_rgba(255,255,255,0.08)]";
 
   const subShadow = img
-    ? "[text-shadow:0_0_6px_rgba(0,0,0,1),0_0_14px_rgba(0,0,0,0.8),0_0_32px_rgba(0,0,0,0.5)]"
+    ? "[text-shadow:0_1px_3px_rgba(0,0,0,0.7),0_0_6px_rgba(0,0,0,0.3)]"
     : "[text-shadow:0_0_8px_rgba(255,255,255,0.12),0_0_20px_rgba(255,255,255,0.06)]";
 
   return (
@@ -38,7 +38,8 @@ export function BentoCard({ icon, stat, image, label, sublabel, link }: BentoIte
             className={`object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
             onLoad={() => setLoaded(true)}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
         </>
       )}
 
