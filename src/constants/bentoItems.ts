@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import { FaLinkedinIn, FaGithub, FaXTwitter, FaInstagram, FaFacebookF, FaYoutube, FaTiktok, FaDiscord, FaTelegram, FaRedditAlien, FaTwitch, FaMedium, FaDev, FaStackOverflow, FaDribbble, FaBehance, FaPinterestP, FaSnapchat, FaWhatsapp, FaSpotify, FaSoundcloud, FaSteam, FaCodepen, FaFigma, FaMastodon, FaThreads, FaBluesky, FaPatreon, FaHashnode, FaDog } from "react-icons/fa6";
-import { AlignLeft, Navigation, Mail, Globe } from "lucide-react";
+import { AlignLeft, Navigation, Mail, Globe, MessageCircle, Users, Clock, Eye } from "lucide-react";
 
 type IconEntry = { icon: ComponentType<{ className?: string }>; color: string };
 
@@ -40,6 +40,10 @@ export const ICON_MAP: Record<string, IconEntry> = {
   navigation: { icon: Navigation, color: "text-white/60" },
   mail: { icon: Mail, color: "text-white/60" },
   website: { icon: Globe, color: "text-white/60" },
+  youtube_comment: { icon: MessageCircle, color: "text-[#FF0000]" },
+  subscribers: { icon: Users, color: "text-[#FF0000]" },
+  watch_time: { icon: Clock, color: "text-[#FF0000]" },
+  views: { icon: Eye, color: "text-[#FF0000]" },
 };
 
 export type BentoItemData = {
@@ -64,16 +68,16 @@ export const HEADER_SOCIALS = [
 
 export const BENTO_ITEMS: BentoItemData[] = [
   {
+    id: "photo",
+    image: "/photo.jpg",
+    label: "Let's work together",
+  },
+  {
     id: "location",
     icon: "navigation",
     stat: "TR",
     label: "Eskişehir, TR",
     sublabel: "Hava Durumu",
-  },
-  {
-    id: "photo",
-    image: "/photo.jpg",
-    label: "Let's work together",
   },
   {
     id: "contact",
@@ -90,9 +94,48 @@ export const BENTO_ITEMS: BentoItemData[] = [
     label: "Joy",
     sublabel: "My Best Friend",
   },
+  {
+    id: "instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/evoloper/",
+    label: "evoloper",
+    sublabel: "Instagram",
+  },
+  {
+    id: "boat",
+    spanX: 2,
+    image: "/boat.jpg",
+  },
+  {
+    id: "X",
+    icon: "x",
+    link: "https://x.com/evoloper",
+    label: "evoloper",
+    sublabel: "X",
+  },
+  {
+    id: "Medium",
+    icon: "medium",
+    link: "https://medium.com/@evoloper",
+    label: "evoloper",
+    sublabel: "Medium",
+  },
+  {
+    id: "Whatsapp",
+    icon: "whatsapp",
+    link: "https://wa.me/905532028484",
+    label: "Whatsapp",
+  },
 ];
 
 export const YOUTUBE_ITEMS: BentoItemData[] = [
+  {
+    id: "youtube-subs",
+    icon: "youtube",
+    link: "https://youtube.com/@evoloper0",
+    label: "Subscribe",
+    sublabel: "Go to my Youtube channel",
+  },
   {
     id: "youtube-1",
     spanX: 2,
@@ -101,6 +144,13 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     link: "https://youtube.com/@evoloper0",
     label: "@evoloper YouTube kanalıma git",
     image: "/youtube/77t-FTb8D9I-SD.jpg",
+  },
+  {
+    id: "youtube-comment",
+    icon: "youtube_comment",
+    link: "https://youtube.com/@evoloper0",
+    label: "Elinize emeğinize sağlık ancak bu kadar güzel anlatılırdı 👏🏻👏🏻",
+    sublabel: "@Ozyeyo",
   },
   {
     id: "youtube-2",
@@ -121,6 +171,13 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     image: "/youtube/aEr9WDp5z5g-SD.jpg",
   },
   {
+    id: "youtube-comment",
+    icon: "youtube_comment",
+    link: "https://youtube.com/@evoloper0",
+    label: "Yarın almayı planlıyorum, iyi ki izledim tüm soru işaretlerim gitti emeğinize sağlık❤",
+    sublabel: "@SimülasyonGamer",
+  },
+  {
     id: "youtube-4",
     spanX: 2,
     spanY: 1,
@@ -129,6 +186,13 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     label: "@evoloper YouTube kanalıma git",
     image: "/youtube/BdRjQGJgW38-SD.jpg",
     stat: "100+",
+  },
+  {
+    id: "youtube-comment",
+    icon: "youtube_comment",
+    link: "https://youtube.com/@evoloper0",
+    label: "Size çok teşekkür ederim iki saat her yerden aradım nasıl kullanır diye siz karşıma çıktınız çok güzel anlattınız teşekkür ederim",
+    sublabel: "@ElifKaban-d2x5e",
   },
   {
     id: "youtube-5",
@@ -141,6 +205,28 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     stat: "100+",
   },
   {
+    id: "youtube-subs",
+    icon: "subscribers",
+    link: "https://youtube.com/@evoloper0",
+    label: "Subscriber",
+    stat: "1.5k+",
+  },
+  {
+    id: "youtube-7",
+    icon: "youtube",
+    link: "https://youtube.com/@evoloper0",
+    label: "@evoloper YouTube kanalıma git",
+    image: "/youtube/Mavl7QQgMu4-SD.jpg",
+    stat: "100+",
+  },
+  {
+    id: "youtube-view",
+    icon: "views",
+    link: "https://youtube.com/@evoloper0",
+    label: "Views",
+    stat: "157.8K+",
+  },
+  {
     id: "youtube-6",
     spanX: 2,
     spanY: 1,
@@ -151,14 +237,39 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     stat: "100+",
   },
   {
-    id: "youtube-7",
-    spanX: 2,
-    spanY: 1,
-    icon: "youtube",
+    id: "youtube-hours",
+    icon: "watch_time",
     link: "https://youtube.com/@evoloper0",
-    label: "@evoloper YouTube kanalıma git",
-    image: "/youtube/Mavl7QQgMu4-SD.jpg",
-    stat: "100+",
+    label: "Watch time (hours)",
+    stat: "4.7K+",
+  },
+  {
+    id: "youtube-comment",
+    icon: "youtube_comment",
+    link: "https://youtube.com/@evoloper0",
+    label: "Üstad selamlar. Öncelikle video için teşekkürler. Çok açıklayıcı ve faydalı bir video olmuş eline sağlık. Ailemle birlikte kamp yapmaya başlayacağız...",
+    sublabel: "@shnkamp",
+  },
+  {
+    id: "youtube-comment",
+    icon: "youtube_comment",
+    link: "https://youtube.com/@evoloper0",
+    label: "@evoloper0 hay Allah razı olsun abicim ya çok teşekkür ederim ❤",
+    sublabel: "@TrSavunma",
+  },
+  {
+    id: "youtube-comment",
+    icon: "youtube_comment",
+    link: "https://youtube.com/@evoloper0",
+    label: "Abi Allah senden razı olsun kaç saattir uğraşıyorum çözemedim sen çıktın karşıma 10 dk da kurdum çok teşekkür ederim",
+    sublabel: "@badenes5603",
+  },
+  {
+    id: "youtube-comment",
+    icon: "youtube_comment",
+    link: "https://youtube.com/@evoloper0",
+    label: "izlediğim en garip araba tanıtımı videosu. gülem mi izleyem mi karar veremedim xd ikna ettiniz beni chr ye",
+    sublabel: "@kenybadi",
   },
 ];
 
