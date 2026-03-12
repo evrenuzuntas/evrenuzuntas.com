@@ -117,8 +117,8 @@ export const BENTO_ITEMS: BentoItemData[] = [
     id: "Medium",
     icon: "medium",
     link: "https://medium.com/@evoloper",
-    label: "evoloper",
-    sublabel: "Medium",
+    label: "Medium / evoloper",
+    sublabel: "API kelimesi yazılım dünyasında neredeyse her yerde karşımıza çıkıyor. Ama ilginç olan şu: Herkes API diyor ama herkes aynı şeyi anlamıyor.",
   },
   {
     id: "Whatsapp",
@@ -345,5 +345,17 @@ export const SOFTWARE_ITEMS: BentoItemData[] = [
     icon: "github",
     link: "https://github.com/evoloper",
     label: "GitHub",
+  },
+];
+
+export const BOTTOM_ITEMS: BentoItemData[] = [
+  {
+    id: "reklam",
+    icon: "text",
+    stat: "#reklam",
+    label: "Aura Lüks ",
+    sublabel: "Trendyol",
+    image: "/bottom/aura_luks.png",
+    link: "https://www.trendyol.com/magaza/aura-luks-m-1228918?sst=0&channelId=1&event=0",
   },
 ];

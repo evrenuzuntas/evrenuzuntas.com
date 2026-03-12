@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { BentoBox } from "@/components/BentoBox";
 import { BentoCard } from "@/components/BentoCard";
-import { BENTO_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS } from "@/constants/bentoItems";
+import { BENTO_ITEMS, BOTTOM_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS } from "@/constants/bentoItems";
 import { FaCode, FaYoutube } from "react-icons/fa6";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Footer } from "@/components/Footer";
@@ -44,7 +44,7 @@ export default function Home() {
             <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
               <BentoCard {...item} />
             </BentoBox>
-          )
+          ),
         )}
       </div>
 
@@ -76,6 +76,19 @@ export default function Home() {
 
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
         {SOFTWARE_ITEMS.map((item) => (
+          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
+            <BentoCard {...item} />
+          </BentoBox>
+        ))}
+      </div>
+      {/* Bottom Part */}
+      <div id="bottom_part" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/20" />
+        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/20" />
+      </div>
+
+      <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
+        {BOTTOM_ITEMS.map((item) => (
           <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
             <BentoCard {...item} />
           </BentoBox>
