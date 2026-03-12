@@ -1,8 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import NextImage from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { ICON_MAP, type BentoItemData } from "@/constants/bentoItems";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 export function BentoCard({ icon, stat, image, label, sublabel, link }: BentoItemData) {
+  const [loaded, setLoaded] = useState(false);
   const iconData = icon ? ICON_MAP[icon] : null;
   const IconComp = iconData?.icon;
   const img = !!image;
@@ -23,7 +28,16 @@ export function BentoCard({ icon, stat, image, label, sublabel, link }: BentoIte
     <>
       {image && (
         <>
-          <NextImage src={image} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+          {!loaded && <Skeleton className="absolute inset-0 rounded-3xl" />}
+          <NextImage
+            src={image}
+            alt={label || ""}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={80}
+            className={`object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+            onLoad={() => setLoaded(true)}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         </>
       )}

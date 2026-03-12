@@ -5,6 +5,7 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import { FaXTwitter, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube, FaCode } from "react-icons/fa6";
 import { HEADER_SOCIALS } from "@/constants/bentoItems";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   x: <FaXTwitter />,
@@ -18,6 +19,7 @@ const formatTimestamp = () => dayjs().format("ddd, MMM DD, hh:mm A").toUpperCase
 
 export function HeroSection() {
   const [timestamp, setTimestamp] = useState(formatTimestamp);
+  const [avatarLoaded, setAvatarLoaded] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => setTimestamp(formatTimestamp()), 60_000);
@@ -46,7 +48,17 @@ export function HeroSection() {
         <div className="absolute -inset-4 rounded-full bg-white/[0.07] blur-2xl" />
 
         <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-full overflow-hidden border-2 border-white/10 shadow-lg shadow-black/40">
-          <Image src="/pp.jpeg" alt="Evren Uzuntaş" fill sizes="112px" className="object-cover" priority />
+          {!avatarLoaded && <Skeleton className="absolute inset-0 rounded-full" />}
+          <Image
+            src="/pp.jpeg"
+            alt="Evren Uzuntaş"
+            fill
+            sizes="112px"
+            quality={80}
+            className={`object-cover transition-opacity duration-500 ${avatarLoaded ? "opacity-100" : "opacity-0"}`}
+            onLoad={() => setAvatarLoaded(true)}
+            priority
+          />
         </div>
 
         {/* Blue verification badge */}
