@@ -13,7 +13,7 @@ export default function Home() {
       <HeroSection />
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
         {BENTO_ITEMS.map((item) => (
-          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link} variant={item.image ? "image" : "default"}>
+          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
             <BentoCard {...item} />
           </BentoBox>
         ))}
@@ -31,7 +31,7 @@ export default function Home() {
 
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
         {YOUTUBE_ITEMS.map((item) => (
-          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link} variant={item.image ? "image" : "default"}>
+          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
             <BentoCard {...item} />
           </BentoBox>
         ))}
@@ -47,7 +47,7 @@ export default function Home() {
 
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
         {SOFTWARE_ITEMS.map((item) => (
-          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link} variant={item.image ? "image" : "default"}>
+          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
             <BentoCard {...item} />
           </BentoBox>
         ))}
