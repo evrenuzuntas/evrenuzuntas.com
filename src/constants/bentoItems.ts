@@ -77,7 +77,6 @@ export const BENTO_ITEMS: BentoItemData[] = [
     icon: "navigation",
     stat: "TR",
     label: "Eskişehir, TR",
-    sublabel: "Hava Durumu",
     image: "/world.png",
   },
   {
@@ -302,7 +301,7 @@ export const SOFTWARE_ITEMS: BentoItemData[] = [
     id: "bio",
     icon: "text",
     label: "Senior Dev & Tech Creator",
-    sublabel: "Based in Eskişehir. Open for new roles.",
+    sublabel: " Open for new roles & new locations.",
   },
 
   {

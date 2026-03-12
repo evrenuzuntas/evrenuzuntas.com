@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useCallback } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { BentoBox } from "@/components/BentoBox";
 import { BentoCard } from "@/components/BentoCard";
@@ -8,16 +9,43 @@ import { FaCode, FaYoutube } from "react-icons/fa6";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Footer } from "@/components/Footer";
 
+const EMAIL = "evrenuzuntas@gmail.com";
+
 export default function Home() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = EMAIL;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white px-4 py-10">
       <HeroSection />
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
-        {BENTO_ITEMS.map((item) => (
-          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
-            <BentoCard {...item} />
-          </BentoBox>
-        ))}
+        {BENTO_ITEMS.map((item) =>
+          item.id === "contact" ? (
+            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} onClick={copyEmail}>
+              <BentoCard {...item} sublabel={copied ? "Kopyalandı!" : item.sublabel} />
+            </BentoBox>
+          ) : (
+            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
+              <BentoCard {...item} />
+            </BentoBox>
+          )
+        )}
       </div>
 
       {/* YouTube Items  */}
