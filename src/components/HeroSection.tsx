@@ -25,9 +25,9 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center pt-16 pb-10 md:pt-24 md:pb-14 overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center  pb-10  md:pb-14 overflow-hidden">
       {/* Timestamp */}
-      <p suppressHydrationWarning className="text-[10px] md:text-xs tracking-[0.25em] text-white/30 uppercase font-medium mb-14 md:mb-16 z-10">
+      <p suppressHydrationWarning className="text-[10px] md:text-xs tracking-[0.25em] text-white/30 uppercase font-medium mb-6 md:mb-8 z-10">
         {timestamp}
       </p>
 

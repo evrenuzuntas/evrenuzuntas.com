@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import { FaLinkedinIn, FaGithub, FaXTwitter, FaInstagram, FaFacebookF, FaYoutube, FaTiktok, FaDiscord, FaTelegram, FaRedditAlien, FaTwitch, FaMedium, FaDev, FaStackOverflow, FaDribbble, FaBehance, FaPinterestP, FaSnapchat, FaWhatsapp, FaSpotify, FaSoundcloud, FaSteam, FaCodepen, FaFigma, FaMastodon, FaThreads, FaBluesky, FaPatreon, FaHashnode, FaDog } from "react-icons/fa6";
-import { AlignLeft, Navigation, Mail } from "lucide-react";
+import { AlignLeft, Navigation, Mail, Globe } from "lucide-react";
 
 type IconEntry = { icon: ComponentType<{ className?: string }>; color: string };
 
@@ -39,6 +39,7 @@ export const ICON_MAP: Record<string, IconEntry> = {
   text: { icon: AlignLeft, color: "text-white/60" },
   navigation: { icon: Navigation, color: "text-white/60" },
   mail: { icon: Mail, color: "text-white/60" },
+  website: { icon: Globe, color: "text-white/60" },
 };
 
 export type BentoItemData = {
@@ -63,12 +64,6 @@ export const HEADER_SOCIALS = [
 
 export const BENTO_ITEMS: BentoItemData[] = [
   {
-    id: "bio",
-    icon: "text",
-    label: "Senior Dev & Tech Creator",
-    sublabel: "Based in Eskişehir. Open for new roles.",
-  },
-  {
     id: "location",
     icon: "navigation",
     stat: "TR",
@@ -87,25 +82,13 @@ export const BENTO_ITEMS: BentoItemData[] = [
     label: "evrenuzuntas",
     sublabel: "@gmail.com",
   },
-  {
-    id: "linkedin",
-    icon: "linkedin",
-    link: "https://linkedin.com/in/evrenuzuntas",
-    label: "LinkedIn",
-    stat: "500+",
-  },
-  {
-    id: "github",
-    icon: "github",
-    link: "https://github.com/evoloper",
-    label: "GitHub",
-    stat: "20k",
-  },
+
   {
     id: "joy",
     icon: "dog",
     image: "/joy.jpg",
     label: "Joy",
+    sublabel: "My Best Friend",
   },
 ];
 
@@ -176,5 +159,56 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     label: "@evoloper YouTube kanalıma git",
     image: "/youtube/Mavl7QQgMu4-SD.jpg",
     stat: "100+",
+  },
+];
+
+export const SOFTWARE_ITEMS: BentoItemData[] = [
+  {
+    id: "bio",
+    icon: "text",
+    label: "Senior Dev & Tech Creator",
+    sublabel: "Based in Eskişehir. Open for new roles.",
+  },
+
+  {
+    id: "renew",
+    spanX: 2,
+    icon: "website",
+    link: "https://renewturkiye.com/",
+    label: "Renew Turkiye",
+    image: "/software/screenshot-2026-03-12-07-52-47.png",
+  },
+  {
+    id: "CV",
+    link: "https://drive.google.com/file/d/1lTLtZNlVFvcKK9OJCpJWBf-QILdjb44e/view?usp=drive_link",
+    label: "Check out my Resume",
+  },
+
+  {
+    id: "maisPort",
+    spanX: 2,
+    icon: "website",
+    label: "MAIS PORT - Enterprise Web Platform",
+    image: "/software/maisPort.jpg",
+  },
+  {
+    id: "ikam",
+    spanX: 2,
+    icon: "website",
+    label: "IKAM - Replacement vehicle platform",
+    image: "/software/ikam.jpg",
+  },
+  {
+    id: "linkedin",
+    icon: "linkedin",
+    link: "https://linkedin.com/in/evrenuzuntas",
+    label: "LinkedIn",
+    stat: "500+",
+  },
+  {
+    id: "github",
+    icon: "github",
+    link: "https://github.com/evoloper",
+    label: "GitHub",
   },
 ];
