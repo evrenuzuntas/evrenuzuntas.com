@@ -29,17 +29,25 @@ export function BentoCard({ icon, stat, image, label, sublabel, link }: BentoIte
       )}
 
       {(IconComp || stat || link) && (
-        <header className="relative z-10 flex items-start justify-between shrink-0">
-          {IconComp ? <IconComp className={`h-5 w-5 ${iconData!.color} ${iconShadow}`} /> : <span />}
-          {stat ? <span className={`text-sm font-semibold ${textShadow}`}>{stat}</span> : link ? <ArrowUpRight className="h-4 w-4 text-white/40" strokeWidth={2} /> : null}
+        <header className="relative z-10 flex items-start justify-between shrink-0 min-w-0">
+          {IconComp ? <IconComp className={`h-5 w-5 shrink-0 ${iconData!.color} ${iconShadow}`} /> : <span />}
+          {stat ? <span className={`text-sm font-semibold truncate ${textShadow}`}>{stat}</span> : link ? <ArrowUpRight className="h-4 w-4 shrink-0 text-white/40" strokeWidth={2} /> : null}
         </header>
       )}
 
       {(label || sublabel) && (
-        <div className="relative z-10 flex-1 flex flex-col min-h-0 justify-end">
-          <div className="flex flex-col gap-0.5">
-            {label && <span className={`text-sm ${img ? "font-semibold text-white" : "font-medium text-white/90"} ${textShadow}`}>{label}</span>}
-            {sublabel && <span className={`text-xs ${img ? "text-white/80" : "text-white/50"} ${subShadow}`}>{sublabel}</span>}
+        <div className="relative z-10 flex-1 flex flex-col min-h-0 justify-end overflow-hidden">
+          <div className="flex flex-col gap-0.5 min-w-0">
+            {label && (
+              <span className={`text-sm break-words line-clamp-5 ${img ? "font-semibold text-white" : "font-medium text-white/90"} ${textShadow}`}>
+                {label}
+              </span>
+            )}
+            {sublabel && (
+              <span className={`text-xs break-words line-clamp-2 ${img ? "text-white/80" : "text-white/50"} ${subShadow}`}>
+                {sublabel}
+              </span>
+            )}
           </div>
         </div>
       )}
