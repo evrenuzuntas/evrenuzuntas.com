@@ -127,7 +127,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
     label: "Whatsapp",
   },
   {
-    id: "Whatsapp",
+    id: "bio-text",
     spanX: 2,
     icon: "text",
     label: "I’m a Senior Front-end/Fullstack developer with 5+ years of experience and the creator of the @evoloper YouTube channel. I build modern web applications using Next.js while sharing my passion for technology, cars, and gear through creative content. Beyond the screen, I’m an avid camper and a lifelong explorer of the latest gadgets.",
@@ -194,7 +194,7 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     image: "/youtube/aEr9WDp5z5g-SD.jpg",
   },
   {
-    id: "youtube-comment",
+    id: "youtube-comment-2",
     icon: "youtube_comment",
     link: "https://youtube.com/@evoloper0",
     label: "Yarın almayı planlıyorum, iyi ki izledim tüm soru işaretlerim gitti emeğinize sağlık❤",
@@ -211,7 +211,7 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     stat: "100+",
   },
   {
-    id: "youtube-comment",
+    id: "youtube-comment-3",
     icon: "youtube_comment",
     link: "https://youtube.com/@evoloper0",
     label: "Size çok teşekkür ederim iki saat her yerden aradım nasıl kullanır diye siz karşıma çıktınız çok güzel anlattınız teşekkür ederim",
@@ -228,7 +228,7 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     stat: "100+",
   },
   {
-    id: "youtube-subs",
+    id: "youtube-subs-count",
     icon: "subscribers",
     link: "https://youtube.com/@evoloper0",
     label: "Subscriber",
@@ -267,28 +267,28 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
     stat: "4.7K+",
   },
   {
-    id: "youtube-comment",
+    id: "youtube-comment-4",
     icon: "youtube_comment",
     link: "https://youtube.com/@evoloper0",
     label: "Üstad selamlar. Öncelikle video için teşekkürler. Çok açıklayıcı ve faydalı bir video olmuş eline sağlık. Ailemle birlikte kamp yapmaya başlayacağız...",
     sublabel: "@shnkamp",
   },
   {
-    id: "youtube-comment",
+    id: "youtube-comment-5",
     icon: "youtube_comment",
     link: "https://youtube.com/@evoloper0",
     label: "@evoloper0 hay Allah razı olsun abicim ya çok teşekkür ederim ❤",
     sublabel: "@TrSavunma",
   },
   {
-    id: "youtube-comment",
+    id: "youtube-comment-6",
     icon: "youtube_comment",
     link: "https://youtube.com/@evoloper0",
     label: "Abi Allah senden razı olsun kaç saattir uğraşıyorum çözemedim sen çıktın karşıma 10 dk da kurdum çok teşekkür ederim",
     sublabel: "@badenes5603",
   },
   {
-    id: "youtube-comment",
+    id: "youtube-comment-7",
     icon: "youtube_comment",
     link: "https://youtube.com/@evoloper0",
     label: "izlediğim en garip araba tanıtımı videosu. gülem mi izleyem mi karar veremedim xd ikna ettiniz beni chr ye",
