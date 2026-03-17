@@ -43,7 +43,7 @@ export function HeroSection() {
 
       {/* Name */}
       <div className="w-full overflow-x-clip">
-        <h1 className="relative text-[clamp(2.5rem,9vw,7rem)] font-extrabold text-center text-foreground/10 whitespace-nowrap -mt-6">Evren Uzuntaş</h1>
+        <h1 className="relative text-[clamp(2.5rem,9vw,7rem)] font-extrabold text-center text-foreground/20 whitespace-nowrap -mt-6">Evren Uzuntaş</h1>
       </div>
 
       {/* Quick navigation buttons */}
