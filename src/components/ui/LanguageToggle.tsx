@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLanguage } from "./LanguageProvider";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export function LanguageToggle() {
   const { locale, toggleLocale } = useLanguage();

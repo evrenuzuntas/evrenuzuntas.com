@@ -1,17 +1,12 @@
 "use client";
 
 import { useState, useCallback, useMemo, type ReactNode } from "react";
-import { HeroSection } from "@/components/HeroSection";
-import { BentoBox } from "@/components/BentoBox";
-import { BentoCard } from "@/components/BentoCard";
-import { BentoExpandModal } from "@/components/BentoExpandModal";
+import { HeroSection, Footer } from "@/components/sections";
+import { BentoBox, BentoCard, BentoExpandModal } from "@/components/bento";
 import { BENTO_ITEMS, BOTTOM_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS, type BentoItemData } from "@/constants/bentoItems";
 import { FaCode, FaYoutube, FaUser } from "react-icons/fa6";
-import { ScrollToTop } from "@/components/ScrollToTop";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { LanguageToggle } from "@/components/LanguageToggle";
-import { useLanguage } from "@/components/LanguageProvider";
-import { Footer } from "@/components/Footer";
+import { ScrollToTop, ThemeToggle, LanguageToggle } from "@/components/ui";
+import { useLanguage } from "@/components/providers";
 
 const EMAIL = "evrenuzuntas@gmail.com";
 

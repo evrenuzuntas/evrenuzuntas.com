@@ -7,7 +7,7 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import { FaYoutube, FaCode, FaUser } from "react-icons/fa6";
 import { Skeleton } from "@/components/ui/Skeleton";
-import { useLanguage } from "./LanguageProvider";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
