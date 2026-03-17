@@ -26,10 +26,7 @@ export function HeroSection() {
 
       {/* Profile photo */}
       <div className="relative z-10 mb-4">
-        {/* Glow */}
-        <div className="absolute -inset-4 rounded-full bg-foreground/[0.07] blur-2xl" />
-
-        <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-full overflow-hidden border-2 border-foreground/10 shadow-lg shadow-black/40">
+        <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-full overflow-hidden border-2 border-foreground/10 shadow-[var(--avatar-glow)]">
           {!avatarLoaded && <Skeleton className="absolute inset-0 rounded-full" />}
           <Image
             src="/pp.jpeg"
