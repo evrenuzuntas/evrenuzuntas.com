@@ -1,0 +1,53 @@
+import type { BentoItemData } from "./types";
+
+export const SOFTWARE_ITEMS: BentoItemData[] = [
+  {
+    id: "bio",
+    bigIcon: "opentowork",
+    label: "Senior Dev & Tech Creator",
+    sublabel: " Open for new roles & new locations.",
+    stat: "Open to work",
+  },
+  {
+    id: "linkedin",
+    bigIcon: "linkedin",
+    link: "https://linkedin.com/in/evrenuzuntas",
+    label: "LinkedIn",
+    stat: "500+",
+  },
+  {
+    id: "github",
+    bigIcon: "github",
+    link: "https://github.com/evoloper",
+    label: "GitHub",
+  },
+  {
+    id: "CV",
+    bigIcon: "resume",
+    link: "https://drive.google.com/file/d/1lTLtZNlVFvcKK9OJCpJWBf-QILdjb44e/view?usp=drive_link",
+    label: "Check out my Resume",
+  },
+  {
+    id: "renew",
+    spanX: 2,
+    icon: "website",
+    link: "https://renewturkiye.com/",
+    label: "Renew Turkiye",
+    image: "/software/screenshot-2026-03-12-07-52-47.png",
+  },
+  {
+    id: "maisPort",
+    spanX: 2,
+    icon: "website",
+    label: "MAIS PORT - Enterprise Web Platform",
+    image: "/software/maisPort.jpg",
+  },
+  {
+    id: "ikam",
+    spanX: 2,
+    icon: "website",
+    label: "IKAM - Replacement vehicle platform",
+    image: "/software/ikam.jpg",
+    stat: "10000",
+  },
+];

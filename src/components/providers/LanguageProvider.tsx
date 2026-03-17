@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from "react";
 import { TRANSLATIONS, type Locale, type Translations } from "@/locales";
-import type { BentoItemData } from "@/constants/bentoItems";
+import type { BentoItemData } from "@/constants";
 
 type LanguageContextValue = {
   locale: Locale;
@@ -57,11 +57,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     [t],
   );
 
-  return (
-    <LanguageContext.Provider value={{ locale, t, toggleLocale, localize }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={{ locale, t, toggleLocale, localize }}>{children}</LanguageContext.Provider>;
 }
 
 export const useLanguage = () => useContext(LanguageContext);

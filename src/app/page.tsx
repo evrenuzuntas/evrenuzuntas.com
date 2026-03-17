@@ -3,7 +3,7 @@
 import { useState, useCallback, useMemo, type ReactNode } from "react";
 import { HeroSection, Footer } from "@/components/sections";
 import { BentoBox, BentoCard, BentoExpandModal } from "@/components/bento";
-import { BENTO_ITEMS, BOTTOM_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS, type BentoItemData } from "@/constants/bentoItems";
+import { BENTO_ITEMS, BOTTOM_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS, type BentoItemData } from "@/constants";
 import { FaCode, FaYoutube, FaUser } from "react-icons/fa6";
 import { ScrollToTop, ThemeToggle, LanguageToggle } from "@/components/ui";
 import { useLanguage } from "@/components/providers";

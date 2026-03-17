@@ -3,7 +3,7 @@
 import { useState } from "react";
 import NextImage from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { ICON_MAP, type BentoItemData } from "@/constants/bentoItems";
+import { ICON_MAP, type BentoItemData } from "@/constants";
 import { Skeleton } from "@/components/ui/Skeleton";
 
 export function BentoCard({ icon, bigIcon, stat, image, label, sublabel, link, expanded }: BentoItemData & { expanded?: boolean }) {
