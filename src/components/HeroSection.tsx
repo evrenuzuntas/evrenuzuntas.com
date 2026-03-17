@@ -18,7 +18,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center">
       {/* Timestamp */}
       <p suppressHydrationWarning className="text-[10px] md:text-xs tracking-[0.25em] text-foreground/30 uppercase font-medium mb-6 md:mb-8 z-10">
         {timestamp}
@@ -52,9 +52,11 @@ export function HeroSection() {
       </div>
 
       {/* Name */}
-      <h1 className="relative text-[clamp(2.5rem,9vw,7rem)] font-extrabold text-center text-foreground/10 whitespace-nowrap -mt-6">
-        Evren Uzuntaş
-      </h1>
+      <div className="w-full overflow-hidden">
+        <h1 className="relative text-[clamp(2.5rem,9vw,7rem)] font-extrabold text-center text-foreground/10 whitespace-nowrap -mt-6">
+          Evren Uzuntaş
+        </h1>
+      </div>
 
       {/* Quick navigation buttons */}
       <div className="relative z-10 flex items-center gap-3 mt-8">
