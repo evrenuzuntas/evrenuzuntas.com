@@ -30,8 +30,8 @@ export function BentoBox({ spanX = 1, spanY = 1, href, onClick, className = "", 
     <Tag
       {...tagProps}
       className={[
-        "relative overflow-hidden rounded-3xl ring-1 ring-inset ring-white/10",
-        "flex flex-col bg-gradient-to-br from-[#141414] to-[#0c0c0c] p-4 gap-3 text-white/90 text-inherit no-underline",
+        "relative overflow-hidden rounded-3xl ring-1 ring-inset ring-foreground/10",
+        "flex flex-col bg-gradient-to-br from-card-from to-card-to p-4 gap-3 text-foreground/90 text-inherit no-underline",
         aspect,
         "desktop:aspect-auto",
         (href || onClick) && "cursor-pointer",

@@ -14,15 +14,15 @@ export function BentoCard({ icon, stat, image, label, sublabel, link, expanded }
 
   const iconShadow = img
     ? "[filter:drop-shadow(0_0_3px_rgba(0,0,0,1))_drop-shadow(0_0_10px_rgba(0,0,0,1))_drop-shadow(0_0_24px_rgba(0,0,0,0.8))_drop-shadow(0_0_48px_rgba(0,0,0,0.5))]"
-    : "[filter:drop-shadow(0_0_10px_rgba(255,255,255,0.15))_drop-shadow(0_0_24px_rgba(255,255,255,0.08))]";
+    : "icon-shadow-card";
 
   const textShadow = img
     ? "[text-shadow:0_1px_3px_rgba(0,0,0,0.8),0_0_8px_rgba(0,0,0,0.4)]"
-    : "[text-shadow:0_0_8px_rgba(255,255,255,0.15),0_0_20px_rgba(255,255,255,0.08)]";
+    : "text-shadow-card";
 
   const subShadow = img
     ? "[text-shadow:0_1px_3px_rgba(0,0,0,0.7),0_0_6px_rgba(0,0,0,0.3)]"
-    : "[text-shadow:0_0_8px_rgba(255,255,255,0.12),0_0_20px_rgba(255,255,255,0.06)]";
+    : "sub-shadow-card";
 
   return (
     <>
@@ -46,7 +46,7 @@ export function BentoCard({ icon, stat, image, label, sublabel, link, expanded }
       {(IconComp || stat || link) && (
         <header className="relative z-10 flex items-start justify-between shrink-0 min-w-0">
           {IconComp ? <IconComp className={`h-5 w-5 shrink-0 ${iconData!.color} ${iconShadow}`} /> : <span />}
-          {stat ? <span className={`text-sm font-semibold truncate ${textShadow}`}>{stat}</span> : link ? <ArrowUpRight className="h-4 w-4 shrink-0 text-white/40" strokeWidth={2} /> : null}
+          {stat ? <span className={`text-sm font-semibold truncate ${textShadow}`}>{stat}</span> : link ? <ArrowUpRight className="h-4 w-4 shrink-0 text-foreground/40" strokeWidth={2} /> : null}
         </header>
       )}
 
@@ -54,12 +54,12 @@ export function BentoCard({ icon, stat, image, label, sublabel, link, expanded }
         <div className="relative z-10 flex-1 flex flex-col min-h-0 justify-end overflow-hidden text-left">
           <div className="flex flex-col gap-0.5 min-w-0">
             {label && (
-              <span className={`text-sm break-words ${expanded ? "" : "line-clamp-5"} ${img ? "font-semibold text-white" : "font-medium text-white/90"} ${textShadow}`}>
+              <span className={`text-sm break-words ${expanded ? "" : "line-clamp-5"} ${img ? "font-semibold text-white" : "font-medium text-foreground/90"} ${textShadow}`}>
                 {label}
               </span>
             )}
             {sublabel && (
-              <span className={`text-xs break-words ${expanded ? "" : "line-clamp-2"} ${img ? "text-white/80" : "text-white/50"} ${subShadow}`}>
+              <span className={`text-xs break-words ${expanded ? "" : "line-clamp-2"} ${img ? "text-white/80" : "text-foreground/50"} ${subShadow}`}>
                 {sublabel}
               </span>
             )}

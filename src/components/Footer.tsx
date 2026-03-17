@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="relative mt-20 pb-10">
       {/* Top divider */}
       <div className="max-w-[832px] mx-auto mb-8">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
       </div>
 
       <div className="flex flex-col items-center gap-5">
@@ -27,7 +27,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/40 transition-all duration-200 hover:bg-white/10 hover:text-white hover:scale-105"
+              className="flex h-9 w-9 items-center justify-center rounded-xl border border-foreground/10 bg-foreground/5 text-foreground/40 transition-all duration-200 hover:bg-foreground/10 hover:text-foreground hover:scale-105"
             >
               <span className="text-[14px]">{SOCIAL_ICONS[s.id]}</span>
             </a>
@@ -35,7 +35,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-[11px] tracking-[0.2em] text-white/20 uppercase font-medium">
+        <p className="text-[11px] tracking-[0.2em] text-foreground/20 uppercase font-medium">
           © {new Date().getFullYear()} Evren Uzuntaş
         </p>
       </div>

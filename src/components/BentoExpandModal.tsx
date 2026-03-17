@@ -51,8 +51,8 @@ export function BentoExpandModal({ item, onClose }: Props) {
       <div
         onClick={(e) => e.stopPropagation()}
         className={[
-          "relative overflow-hidden rounded-3xl ring-1 ring-inset ring-white/10",
-          "flex flex-col bg-gradient-to-br from-[#141414] to-[#0c0c0c] p-4 gap-3 text-white/90",
+          "relative overflow-hidden rounded-3xl ring-1 ring-inset ring-foreground/10",
+          "flex flex-col bg-gradient-to-br from-card-from to-card-to p-4 gap-3 text-foreground/90",
           "w-full max-w-[416px] aspect-square overflow-y-auto",
           closing ? "bento-modal-exit" : "bento-modal-enter",
         ].join(" ")}

@@ -8,6 +8,7 @@ import { BentoExpandModal } from "@/components/BentoExpandModal";
 import { BENTO_ITEMS, BOTTOM_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS, type BentoItemData } from "@/constants/bentoItems";
 import { FaCode, FaYoutube, FaUser } from "react-icons/fa6";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Footer } from "@/components/Footer";
 
 const EMAIL = "evrenuzuntas@gmail.com";
@@ -34,14 +35,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white px-4 py-10">
+    <main className="min-h-screen bg-background text-foreground px-4 py-10">
       <HeroSection />
       {/* Software Development */}
       <div id="software" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/20" />
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
         <FaCode className="text-[#42A5F5] text-2xl group-hover:scale-110 transition-transform duration-300" />
         <span className="text-sm font-medium tracking-wider uppercase">Software Development</span>
-        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/20" />
+        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-foreground/20 to-foreground/20" />
       </div>
 
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
@@ -54,10 +55,10 @@ export default function Home() {
 
       {/* Personal */}
       <div id="personal" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/20" />
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
         <FaUser className="text-[#AB47BC] text-2xl group-hover:scale-110 transition-transform duration-300" />
         <span className="text-sm font-medium tracking-wider uppercase">Personal</span>
-        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/20" />
+        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-foreground/20 to-foreground/20" />
       </div>
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
         {BENTO_ITEMS.map((item) =>
@@ -75,12 +76,12 @@ export default function Home() {
 
       {/* YouTube Items  */}
       <div id="youtube" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/20" />
-        <a href="https://youtube.com/@evoloper0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/60 hover:text-[#FF0000] transition-colors duration-300 group">
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
+        <a href="https://youtube.com/@evoloper0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/60 hover:text-[#FF0000] transition-colors duration-300 group">
           <FaYoutube className="text-[#FF0000] text-2xl group-hover:scale-110 transition-transform duration-300" />
           <span className="text-sm font-medium tracking-wider uppercase">YouTube</span>
         </a>
-        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/20" />
+        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-foreground/20 to-foreground/20" />
       </div>
 
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
@@ -93,8 +94,8 @@ export default function Home() {
 
       {/* Bottom Part */}
       <div id="bottom_part" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/20" />
-        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/20" />
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
+        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-foreground/20 to-foreground/20" />
       </div>
 
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
@@ -106,6 +107,7 @@ export default function Home() {
       </div>
       <Footer />
       <ScrollToTop />
+      <ThemeToggle />
       <BentoExpandModal item={expandedItem} onClose={() => setExpandedItem(null)} />
     </main>
   );
