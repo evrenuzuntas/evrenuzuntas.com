@@ -8,15 +8,15 @@
    ──────────────────────────────────────────────────────────────── */
 
 :root {
-  --background: #0a0a0a;
+  --background: #0c0c0c;
   --foreground: #ffffff;
-  --card-from: #141414;
-  --card-to: #0c0c0c;
+  --card-from: #171717;
+  --card-to: #171717;
   --ring-badge: #0a0a0a;
 
-  --text-shadow-noimg: 0 0 8px rgba(255,255,255,0.15), 0 0 20px rgba(255,255,255,0.08);
-  --sub-shadow-noimg: 0 0 8px rgba(255,255,255,0.12), 0 0 20px rgba(255,255,255,0.06);
-  --avatar-glow: 0 0 20px 4px rgba(255,255,255,0.07), 0 0 40px 8px rgba(255,255,255,0.04);
+  --text-shadow-noimg: 0 0 8px rgba(255, 255, 255, 0.15), 0 0 20px rgba(255, 255, 255, 0.08);
+  --sub-shadow-noimg: 0 0 8px rgba(255, 255, 255, 0.12), 0 0 20px rgba(255, 255, 255, 0.06);
+  --avatar-glow: 0 0 20px 4px rgba(255, 255, 255, 0.07), 0 0 40px 8px rgba(255, 255, 255, 0.04);
 }
 
 [data-theme="light"] {
@@ -28,7 +28,7 @@
 
   --text-shadow-noimg: none;
   --sub-shadow-noimg: none;
-  --avatar-glow: 0 0 20px 4px rgba(0,0,0,0.05), 0 0 40px 8px rgba(0,0,0,0.03);
+  --avatar-glow: 0 0 20px 4px rgba(0, 0, 0, 0.05), 0 0 40px 8px rgba(0, 0, 0, 0.03);
 }
 
 @theme inline {
@@ -47,31 +47,65 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* ── Card shadow utilities (theme-aware) ────────────────────────── */
-.text-shadow-card  { text-shadow: var(--text-shadow-noimg); }
-.sub-shadow-card   { text-shadow: var(--sub-shadow-noimg); }
+.text-shadow-card {
+  text-shadow: var(--text-shadow-noimg);
+}
+.sub-shadow-card {
+  text-shadow: var(--sub-shadow-noimg);
+}
 
 /* ── Modal animations ───────────────────────────────────────────── */
 @keyframes backdrop-in {
-  from { opacity: 0 }
-  to { opacity: 1 }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes backdrop-out {
-  from { opacity: 1 }
-  to { opacity: 0 }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 @keyframes modal-in {
-  from { opacity: 0; transform: scale(0.85) }
-  to { opacity: 1; transform: scale(1) }
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 @keyframes modal-out {
-  from { opacity: 1; transform: scale(1) }
-  to { opacity: 0; transform: scale(0.85) }
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.85);
+  }
 }
-.bento-backdrop-enter { animation: backdrop-in 0.25s ease-out forwards }
-.bento-backdrop-exit  { animation: backdrop-out 0.2s ease-in forwards }
-.bento-modal-enter    { animation: modal-in 0.25s ease-out forwards }
-.bento-modal-exit     { animation: modal-out 0.2s ease-in forwards }
+.bento-backdrop-enter {
+  animation: backdrop-in 0.25s ease-out forwards;
+}
+.bento-backdrop-exit {
+  animation: backdrop-out 0.2s ease-in forwards;
+}
+.bento-modal-enter {
+  animation: modal-in 0.25s ease-out forwards;
+}
+.bento-modal-exit {
+  animation: modal-out 0.2s ease-in forwards;
+}

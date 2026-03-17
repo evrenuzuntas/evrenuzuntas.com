@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { FaLinkedinIn, FaGithub, FaXTwitter, FaInstagram, FaFacebookF, FaYoutube, FaTiktok, FaDiscord, FaTelegram, FaRedditAlien, FaTwitch, FaMedium, FaDev, FaStackOverflow, FaDribbble, FaBehance, FaPinterestP, FaSnapchat, FaWhatsapp, FaSpotify, FaSoundcloud, FaSteam, FaCodepen, FaFigma, FaMastodon, FaThreads, FaBluesky, FaPatreon, FaHashnode, FaDog, FaUser } from "react-icons/fa6";
+import { FaLinkedinIn, FaGithub, FaXTwitter, FaInstagram, FaYoutube, FaTiktok, FaMedium, FaWhatsapp, FaDog, FaFileLines, FaBriefcase } from "react-icons/fa6";
 import { AlignLeft, Navigation, Mail, Globe, MessageCircle, Users, Clock, Eye } from "lucide-react";
 
 type IconEntry = { icon: ComponentType<{ className?: string }>; color: string };
@@ -8,35 +8,14 @@ export const ICON_MAP: Record<string, IconEntry> = {
   linkedin: { icon: FaLinkedinIn, color: "text-[#0A66C2]" },
   github: { icon: FaGithub, color: "text-foreground/80" },
   x: { icon: FaXTwitter, color: "text-foreground" },
-  twitter: { icon: FaXTwitter, color: "text-foreground" },
-  instagram: { icon: FaInstagram, color: "text-[#E4405F]" },
-  facebook: { icon: FaFacebookF, color: "text-[#1877F2]" },
+  instagram: { icon: FaInstagram, color: "icon-instagram-gradient" },
   youtube: { icon: FaYoutube, color: "text-[#FF0000]" },
   tiktok: { icon: FaTiktok, color: "text-foreground" },
-  discord: { icon: FaDiscord, color: "text-[#5865F2]" },
-  telegram: { icon: FaTelegram, color: "text-[#26A5E4]" },
-  reddit: { icon: FaRedditAlien, color: "text-[#FF4500]" },
-  twitch: { icon: FaTwitch, color: "text-[#9146FF]" },
   medium: { icon: FaMedium, color: "text-foreground/80" },
-  devto: { icon: FaDev, color: "text-foreground/80" },
-  stackoverflow: { icon: FaStackOverflow, color: "text-[#F58025]" },
-  dribbble: { icon: FaDribbble, color: "text-[#EA4C89]" },
-  behance: { icon: FaBehance, color: "text-[#1769FF]" },
-  pinterest: { icon: FaPinterestP, color: "text-[#BD081C]" },
-  snapchat: { icon: FaSnapchat, color: "text-[#FFFC00]" },
   whatsapp: { icon: FaWhatsapp, color: "text-[#25D366]" },
-  spotify: { icon: FaSpotify, color: "text-[#1DB954]" },
-  soundcloud: { icon: FaSoundcloud, color: "text-[#FF5500]" },
-  steam: { icon: FaSteam, color: "text-foreground/80" },
-  codepen: { icon: FaCodepen, color: "text-foreground/80" },
-  figma: { icon: FaFigma, color: "text-[#F24E1E]" },
-  mastodon: { icon: FaMastodon, color: "text-[#6364FF]" },
-  threads: { icon: FaThreads, color: "text-foreground" },
-  bluesky: { icon: FaBluesky, color: "text-[#0085FF]" },
-  patreon: { icon: FaPatreon, color: "text-[#FF424D]" },
-  hashnode: { icon: FaHashnode, color: "text-[#2962FF]" },
   dog: { icon: FaDog, color: "text-[#D2691E]" },
-  personal: { icon: FaUser, color: "text-[#AB47BC]" },
+  resume: { icon: FaFileLines, color: "text-foreground/80" },
+  opentowork: { icon: FaBriefcase, color: "text-[#457032]" },
   text: { icon: AlignLeft, color: "text-foreground/60" },
   navigation: { icon: Navigation, color: "text-foreground/60" },
   mail: { icon: Mail, color: "text-foreground/60" },
@@ -51,7 +30,10 @@ export type BentoItemData = {
   id: string;
   spanX?: 1 | 2;
   spanY?: 1 | 2;
+  /** İkon anahtarı – normal boyutta gösterilir */
   icon?: string;
+  /** İkon anahtarı – aynı ikon 2 kat büyük gösterilir (bulunduğu konumda) */
+  bigIcon?: string;
   stat?: string;
   image?: string;
   label?: string;
@@ -82,7 +64,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
   },
   {
     id: "contact",
-    icon: "mail",
+    bigIcon: "mail",
     link: "mailto:evrenuzuntas@gmail.com",
     label: "evrenuzuntas",
     sublabel: "@gmail.com",
@@ -97,7 +79,7 @@ export const BENTO_ITEMS: BentoItemData[] = [
   },
   {
     id: "instagram",
-    icon: "instagram",
+    bigIcon: "instagram",
     link: "https://www.instagram.com/evoloper/",
     label: "evoloper",
     sublabel: "Instagram",
@@ -109,21 +91,21 @@ export const BENTO_ITEMS: BentoItemData[] = [
   },
   {
     id: "X",
-    icon: "x",
+    bigIcon: "x",
     link: "https://x.com/evoloper",
     label: "evoloper",
     sublabel: "X",
   },
   {
     id: "Medium",
-    icon: "medium",
+    bigIcon: "medium",
     link: "https://medium.com/@evoloper",
     label: "Medium / evoloper",
     sublabel: "API kelimesi yazılım dünyasında neredeyse her yerde karşımıza çıkıyor. Ama ilginç olan şu: Herkes API diyor ama herkes aynı şeyi anlamıyor.",
   },
   {
     id: "Whatsapp",
-    icon: "whatsapp",
+    bigIcon: "whatsapp",
     link: "https://wa.me/905532028484",
     label: "Whatsapp",
   },
@@ -300,11 +282,31 @@ export const YOUTUBE_ITEMS: BentoItemData[] = [
 export const SOFTWARE_ITEMS: BentoItemData[] = [
   {
     id: "bio",
-    icon: "text",
+    bigIcon: "opentowork",
     label: "Senior Dev & Tech Creator",
     sublabel: " Open for new roles & new locations.",
+    stat: "Open to work",
+  },
+  {
+    id: "linkedin",
+    bigIcon: "linkedin",
+    link: "https://linkedin.com/in/evrenuzuntas",
+    label: "LinkedIn",
+    stat: "500+",
+  },
+  {
+    id: "github",
+    bigIcon: "github",
+    link: "https://github.com/evoloper",
+    label: "GitHub",
   },
 
+  {
+    id: "CV",
+    bigIcon: "resume",
+    link: "https://drive.google.com/file/d/1lTLtZNlVFvcKK9OJCpJWBf-QILdjb44e/view?usp=drive_link",
+    label: "Check out my Resume",
+  },
   {
     id: "renew",
     spanX: 2,
@@ -312,11 +314,6 @@ export const SOFTWARE_ITEMS: BentoItemData[] = [
     link: "https://renewturkiye.com/",
     label: "Renew Turkiye",
     image: "/software/screenshot-2026-03-12-07-52-47.png",
-  },
-  {
-    id: "CV",
-    link: "https://drive.google.com/file/d/1lTLtZNlVFvcKK9OJCpJWBf-QILdjb44e/view?usp=drive_link",
-    label: "Check out my Resume",
   },
 
   {
@@ -333,19 +330,6 @@ export const SOFTWARE_ITEMS: BentoItemData[] = [
     label: "IKAM - Replacement vehicle platform",
     image: "/software/ikam.jpg",
     stat: "10000",
-  },
-  {
-    id: "linkedin",
-    icon: "linkedin",
-    link: "https://linkedin.com/in/evrenuzuntas",
-    label: "LinkedIn",
-    stat: "500+",
-  },
-  {
-    id: "github",
-    icon: "github",
-    link: "https://github.com/evoloper",
-    label: "GitHub",
   },
 ];
 
