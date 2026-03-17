@@ -53,7 +53,7 @@ export function BentoExpandModal({ item, onClose }: Props) {
         className={[
           "relative overflow-hidden rounded-3xl ring-1 ring-inset ring-foreground/10",
           "flex flex-col bg-gradient-to-br from-card-from to-card-to p-4 gap-3 text-foreground/90",
-          "w-full max-w-[416px] max-h-[75vh] overflow-y-auto",
+          "w-full max-w-[416px] min-h-[200px] max-h-[75vh] overflow-y-auto",
           closing ? "bento-modal-exit" : "bento-modal-enter",
         ].join(" ")}
       >
