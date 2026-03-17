@@ -93,7 +93,7 @@ export default function Home() {
       </div>
 
       {/* Bottom Part */}
-      <div id="bottom_part" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
+      {/* <div id="bottom_part" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
         <div className="flex-1 h-px bg-gradient-to-l from-transparent via-foreground/20 to-foreground/20" />
       </div>
@@ -104,7 +104,7 @@ export default function Home() {
             <BentoCard {...item} />
           </BentoBox>
         ))}
-      </div>
+      </div> */}
       {/* <Footer /> */}
       {/* <ScrollToTop /> */}
       {/* <ThemeToggle /> */}
