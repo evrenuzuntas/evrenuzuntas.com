@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Evren Uzuntas",
+  title: "Evoloper",
   description: "Evren Uzuntas's Personal Website",
 };
 
