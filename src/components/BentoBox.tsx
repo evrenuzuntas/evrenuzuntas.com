@@ -15,8 +15,8 @@ const rowSpan: Record<number, string> = { 1: "row-span-1", 2: "row-span-2" };
 const aspectRatio: Record<string, string> = {
   "1-1": "aspect-square",
   "2-2": "aspect-square",
-  "2-1": "aspect-[2/1]",
-  "1-2": "aspect-[1/2]",
+  "2-1": "aspect-[52/25]",
+  "1-2": "aspect-[25/52]",
 };
 
 export function BentoBox({ spanX = 1, spanY = 1, href, onClick, className = "", children }: BentoBoxProps) {
