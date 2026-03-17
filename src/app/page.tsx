@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background text-foreground px-4 py-10">
-      <HeroSection />
+      {/* <HeroSection /> */}
       {/* Software Development */}
       <div id="software" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
