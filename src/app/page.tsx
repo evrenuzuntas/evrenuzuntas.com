@@ -38,7 +38,7 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground px-4 py-10">
       <HeroSection />
       {/* Software Development */}
-      <div id="software" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
+      {/* <div id="software" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
         <FaCode className="text-[#42A5F5] text-2xl group-hover:scale-110 transition-transform duration-300" />
         <span className="text-sm font-medium tracking-wider uppercase">Software Development</span>
@@ -51,10 +51,10 @@ export default function Home() {
             <BentoCard {...item} />
           </BentoBox>
         ))}
-      </div>
+      </div> */}
 
       {/* Personal */}
-      <div id="personal" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
+      {/* <div id="personal" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
         <FaUser className="text-[#AB47BC] text-2xl group-hover:scale-110 transition-transform duration-300" />
         <span className="text-sm font-medium tracking-wider uppercase">Personal</span>
@@ -72,7 +72,7 @@ export default function Home() {
             </BentoBox>
           ),
         )}
-      </div>
+      </div> */}
 
       {/* YouTube Items  */}
       {/* <div id="youtube" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
