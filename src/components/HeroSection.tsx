@@ -5,12 +5,14 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import { FaYoutube, FaCode, FaUser } from "react-icons/fa6";
 import { Skeleton } from "@/components/ui/Skeleton";
+import { useLanguage } from "./LanguageProvider";
 
 const formatTimestamp = () => dayjs().format("ddd, MMM DD, hh:mm A").toUpperCase();
 
 export function HeroSection() {
   const [timestamp, setTimestamp] = useState(formatTimestamp);
   const [avatarLoaded, setAvatarLoaded] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => setTimestamp(formatTimestamp()), 60_000);
@@ -28,16 +30,7 @@ export function HeroSection() {
       <div className="relative z-10 mb-4">
         <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-full overflow-hidden border-2 border-foreground/10 shadow-[var(--avatar-glow)]">
           {!avatarLoaded && <Skeleton className="absolute inset-0 rounded-full" />}
-          <Image
-            src="/pp.jpeg"
-            alt="Evren Uzuntaş"
-            fill
-            sizes="112px"
-            quality={80}
-            className={`object-cover transition-opacity duration-500 ${avatarLoaded ? "opacity-100" : "opacity-0"}`}
-            onLoad={() => setAvatarLoaded(true)}
-            priority
-          />
+          <Image src="/pp.jpeg" alt="Evren Uzuntaş" fill sizes="112px" quality={80} className={`object-cover transition-opacity duration-500 ${avatarLoaded ? "opacity-100" : "opacity-0"}`} onLoad={() => setAvatarLoaded(true)} priority />
         </div>
 
         {/* Blue verification badge */}
@@ -50,33 +43,22 @@ export function HeroSection() {
 
       {/* Name */}
       <div className="w-full overflow-x-clip">
-        <h1 className="relative text-[clamp(2.5rem,9vw,7rem)] font-extrabold text-center text-foreground/10 whitespace-nowrap -mt-6">
-          Evren Uzuntaş
-        </h1>
+        <h1 className="relative text-[clamp(2.5rem,9vw,7rem)] font-extrabold text-center text-foreground/10 whitespace-nowrap -mt-6">Evren Uzuntaş</h1>
       </div>
 
       {/* Quick navigation buttons */}
       <div className="relative z-10 flex items-center gap-3 mt-8">
-        <button
-          onClick={() => document.getElementById("software")?.scrollIntoView({ behavior: "smooth" })}
-          className="flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-foreground/10 hover:text-foreground hover:scale-105 hover:border-blue-400/30"
-        >
+        <button onClick={() => document.getElementById("software")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-foreground/10 hover:text-foreground hover:scale-105 hover:border-blue-400/30">
           <FaCode className="text-blue-400" />
-          Software
+          {t.nav.software}
         </button>
-        <button
-          onClick={() => document.getElementById("personal")?.scrollIntoView({ behavior: "smooth" })}
-          className="flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-foreground/10 hover:text-foreground hover:scale-105 hover:border-[#AB47BC]/30"
-        >
+        <button onClick={() => document.getElementById("personal")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-foreground/10 hover:text-foreground hover:scale-105 hover:border-[#AB47BC]/30">
           <FaUser className="text-[#AB47BC]" />
-          Personal
+          {t.nav.personal}
         </button>
-        <button
-          onClick={() => document.getElementById("youtube")?.scrollIntoView({ behavior: "smooth" })}
-          className="flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-foreground/10 hover:text-foreground hover:scale-105 hover:border-[#FF0000]/30"
-        >
+        <button onClick={() => document.getElementById("youtube")?.scrollIntoView({ behavior: "smooth" })} className="flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-foreground/10 hover:text-foreground hover:scale-105 hover:border-[#FF0000]/30">
           <FaYoutube className="text-[#FF0000]" />
-          YouTube
+          {t.nav.youtube}
         </button>
       </div>
     </section>
