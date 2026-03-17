@@ -3,11 +3,16 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import { FaYoutube, FaCode, FaUser } from "react-icons/fa6";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useLanguage } from "./LanguageProvider";
 
-const formatTimestamp = () => dayjs().format("ddd, MMM DD, hh:mm A").toUpperCase();
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+const formatTimestamp = () => dayjs().tz("Europe/Istanbul").format("ddd, MMM DD, hh:mm A").toUpperCase();
 
 export function HeroSection() {
   const [timestamp, setTimestamp] = useState(formatTimestamp);
