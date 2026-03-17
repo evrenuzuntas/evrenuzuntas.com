@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { FaLinkedinIn, FaGithub, FaXTwitter, FaInstagram, FaFacebookF, FaYoutube, FaTiktok, FaDiscord, FaTelegram, FaRedditAlien, FaTwitch, FaMedium, FaDev, FaStackOverflow, FaDribbble, FaBehance, FaPinterestP, FaSnapchat, FaWhatsapp, FaSpotify, FaSoundcloud, FaSteam, FaCodepen, FaFigma, FaMastodon, FaThreads, FaBluesky, FaPatreon, FaHashnode, FaDog } from "react-icons/fa6";
+import { FaLinkedinIn, FaGithub, FaXTwitter, FaInstagram, FaFacebookF, FaYoutube, FaTiktok, FaDiscord, FaTelegram, FaRedditAlien, FaTwitch, FaMedium, FaDev, FaStackOverflow, FaDribbble, FaBehance, FaPinterestP, FaSnapchat, FaWhatsapp, FaSpotify, FaSoundcloud, FaSteam, FaCodepen, FaFigma, FaMastodon, FaThreads, FaBluesky, FaPatreon, FaHashnode, FaDog, FaUser } from "react-icons/fa6";
 import { AlignLeft, Navigation, Mail, Globe, MessageCircle, Users, Clock, Eye } from "lucide-react";
 
 type IconEntry = { icon: ComponentType<{ className?: string }>; color: string };
@@ -36,6 +36,7 @@ export const ICON_MAP: Record<string, IconEntry> = {
   patreon: { icon: FaPatreon, color: "text-[#FF424D]" },
   hashnode: { icon: FaHashnode, color: "text-[#2962FF]" },
   dog: { icon: FaDog, color: "text-[#D2691E]" },
+  personal: { icon: FaUser, color: "text-[#AB47BC]" },
   text: { icon: AlignLeft, color: "text-white/60" },
   navigation: { icon: Navigation, color: "text-white/60" },
   mail: { icon: Mail, color: "text-white/60" },

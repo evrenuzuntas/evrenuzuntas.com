@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import dayjs from "dayjs";
-import { FaXTwitter, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube, FaCode } from "react-icons/fa6";
+import { FaXTwitter, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube, FaCode, FaUser } from "react-icons/fa6";
 import { HEADER_SOCIALS } from "@/constants/bentoItems";
 import { Skeleton } from "@/components/ui/Skeleton";
 
@@ -81,18 +81,25 @@ export function HeroSection() {
       {/* Quick navigation buttons */}
       <div className="relative z-10 flex items-center gap-3 mt-8">
         <button
-          onClick={() => document.getElementById("youtube")?.scrollIntoView({ behavior: "smooth" })}
-          className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-white/10 hover:text-white hover:scale-105 hover:border-[#FF0000]/30"
-        >
-          <FaYoutube className="text-[#FF0000]" />
-          YouTube
-        </button>
-        <button
           onClick={() => document.getElementById("software")?.scrollIntoView({ behavior: "smooth" })}
           className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-white/10 hover:text-white hover:scale-105 hover:border-blue-400/30"
         >
           <FaCode className="text-blue-400" />
           Software
+        </button>
+        <button
+          onClick={() => document.getElementById("personal")?.scrollIntoView({ behavior: "smooth" })}
+          className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-white/10 hover:text-white hover:scale-105 hover:border-[#AB47BC]/30"
+        >
+          <FaUser className="text-[#AB47BC]" />
+          Personal
+        </button>
+        <button
+          onClick={() => document.getElementById("youtube")?.scrollIntoView({ behavior: "smooth" })}
+          className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm font-medium tracking-wide transition-all duration-200 hover:bg-white/10 hover:text-white hover:scale-105 hover:border-[#FF0000]/30"
+        >
+          <FaYoutube className="text-[#FF0000]" />
+          YouTube
         </button>
       </div>
     </section>
