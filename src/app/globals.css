@@ -26,3 +26,24 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes backdrop-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+@keyframes backdrop-out {
+  from { opacity: 1 }
+  to { opacity: 0 }
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.85) }
+  to { opacity: 1; transform: scale(1) }
+}
+@keyframes modal-out {
+  from { opacity: 1; transform: scale(1) }
+  to { opacity: 0; transform: scale(0.85) }
+}
+.bento-backdrop-enter { animation: backdrop-in 0.25s ease-out forwards }
+.bento-backdrop-exit  { animation: backdrop-out 0.2s ease-in forwards }
+.bento-modal-enter    { animation: modal-in 0.25s ease-out forwards }
+.bento-modal-exit     { animation: modal-out 0.2s ease-in forwards }

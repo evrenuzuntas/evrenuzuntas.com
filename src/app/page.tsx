@@ -4,7 +4,8 @@ import { useState, useCallback } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { BentoBox } from "@/components/BentoBox";
 import { BentoCard } from "@/components/BentoCard";
-import { BENTO_ITEMS, BOTTOM_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS } from "@/constants/bentoItems";
+import { BentoExpandModal } from "@/components/BentoExpandModal";
+import { BENTO_ITEMS, BOTTOM_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS, type BentoItemData } from "@/constants/bentoItems";
 import { FaCode, FaYoutube } from "react-icons/fa6";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Footer } from "@/components/Footer";
@@ -13,6 +14,7 @@ const EMAIL = "evrenuzuntas@gmail.com";
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
+  const [expandedItem, setExpandedItem] = useState<BentoItemData | null>(null);
 
   const copyEmail = useCallback(async () => {
     try {
@@ -41,7 +43,13 @@ export default function Home() {
               <BentoCard {...item} sublabel={copied ? "Kopyalandı!" : item.sublabel} />
             </BentoBox>
           ) : (
-            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
+            <BentoBox
+              key={item.id}
+              spanX={item.spanX}
+              spanY={item.spanY}
+              href={item.link}
+              onClick={!item.link ? () => setExpandedItem(item) : undefined}
+            >
               <BentoCard {...item} />
             </BentoBox>
           ),
@@ -60,7 +68,13 @@ export default function Home() {
 
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
         {YOUTUBE_ITEMS.map((item) => (
-          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
+          <BentoBox
+            key={item.id}
+            spanX={item.spanX}
+            spanY={item.spanY}
+            href={item.link}
+            onClick={!item.link ? () => setExpandedItem(item) : undefined}
+          >
             <BentoCard {...item} />
           </BentoBox>
         ))}
@@ -76,7 +90,13 @@ export default function Home() {
 
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
         {SOFTWARE_ITEMS.map((item) => (
-          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
+          <BentoBox
+            key={item.id}
+            spanX={item.spanX}
+            spanY={item.spanY}
+            href={item.link}
+            onClick={!item.link ? () => setExpandedItem(item) : undefined}
+          >
             <BentoCard {...item} />
           </BentoBox>
         ))}
@@ -89,13 +109,20 @@ export default function Home() {
 
       <div className="grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]">
         {BOTTOM_ITEMS.map((item) => (
-          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
+          <BentoBox
+            key={item.id}
+            spanX={item.spanX}
+            spanY={item.spanY}
+            href={item.link}
+            onClick={!item.link ? () => setExpandedItem(item) : undefined}
+          >
             <BentoCard {...item} />
           </BentoBox>
         ))}
       </div>
       <Footer />
       <ScrollToTop />
+      <BentoExpandModal item={expandedItem} onClose={() => setExpandedItem(null)} />
     </main>
   );
 }

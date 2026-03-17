@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { ICON_MAP, type BentoItemData } from "@/constants/bentoItems";
 import { Skeleton } from "@/components/ui/Skeleton";
 
-export function BentoCard({ icon, stat, image, label, sublabel, link }: BentoItemData) {
+export function BentoCard({ icon, stat, image, label, sublabel, link, expanded }: BentoItemData & { expanded?: boolean }) {
   const [loaded, setLoaded] = useState(false);
   const iconData = icon ? ICON_MAP[icon] : null;
   const IconComp = iconData?.icon;
@@ -54,12 +54,12 @@ export function BentoCard({ icon, stat, image, label, sublabel, link }: BentoIte
         <div className="relative z-10 flex-1 flex flex-col min-h-0 justify-end overflow-hidden">
           <div className="flex flex-col gap-0.5 min-w-0">
             {label && (
-              <span className={`text-sm break-words line-clamp-5 ${img ? "font-semibold text-white" : "font-medium text-white/90"} ${textShadow}`}>
+              <span className={`text-sm break-words ${expanded ? "" : "line-clamp-5"} ${img ? "font-semibold text-white" : "font-medium text-white/90"} ${textShadow}`}>
                 {label}
               </span>
             )}
             {sublabel && (
-              <span className={`text-xs break-words line-clamp-2 ${img ? "text-white/80" : "text-white/50"} ${subShadow}`}>
+              <span className={`text-xs break-words ${expanded ? "" : "line-clamp-2"} ${img ? "text-white/80" : "text-white/50"} ${subShadow}`}>
                 {sublabel}
               </span>
             )}
