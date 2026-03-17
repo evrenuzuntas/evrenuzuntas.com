@@ -75,7 +75,7 @@ export default function Home() {
       </div>
 
       {/* YouTube Items  */}
-      <div id="youtube" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
+      {/* <div id="youtube" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
         <a href="https://youtube.com/@evoloper0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/60 hover:text-[#FF0000] transition-colors duration-300 group">
           <FaYoutube className="text-[#FF0000] text-2xl group-hover:scale-110 transition-transform duration-300" />
@@ -90,7 +90,7 @@ export default function Home() {
             <BentoCard {...item} />
           </BentoBox>
         ))}
-      </div>
+      </div> */}
 
       {/* Bottom Part */}
       {/* <div id="bottom_part" className="flex items-center gap-4 my-10 max-w-[832px] mx-auto scroll-mt-6">
