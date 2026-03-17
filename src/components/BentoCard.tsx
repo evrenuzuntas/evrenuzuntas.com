@@ -51,7 +51,7 @@ export function BentoCard({ icon, stat, image, label, sublabel, link, expanded }
       )}
 
       {(label || sublabel) && (
-        <div className="relative z-10 flex-1 flex flex-col min-h-0 justify-end overflow-hidden">
+        <div className="relative z-10 flex-1 flex flex-col min-h-0 justify-end overflow-hidden text-left">
           <div className="flex flex-col gap-0.5 min-w-0">
             {label && (
               <span className={`text-sm break-words ${expanded ? "" : "line-clamp-5"} ${img ? "font-semibold text-white" : "font-medium text-white/90"} ${textShadow}`}>
