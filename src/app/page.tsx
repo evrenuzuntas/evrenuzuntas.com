@@ -15,7 +15,7 @@ import { Footer } from "@/components/Footer";
 
 const EMAIL = "evrenuzuntas@gmail.com";
 
-const GRID_CLASS = "grid grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]";
+const GRID_CLASS = "grid grid-flow-dense grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]";
 
 function SectionDivider({ id, icon, label, href }: { id: string; icon: ReactNode; label: string; href?: string }) {
   const content = href ? (
