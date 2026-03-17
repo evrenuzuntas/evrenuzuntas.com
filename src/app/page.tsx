@@ -105,10 +105,10 @@ export default function Home() {
           </BentoBox>
         ))}
       </div>
-      <Footer />
+      {/* <Footer /> */}
       {/* <ScrollToTop /> */}
-      <ThemeToggle />
-      <BentoExpandModal item={expandedItem} onClose={() => setExpandedItem(null)} />
+      {/* <ThemeToggle /> */}
+      {/* <BentoExpandModal item={expandedItem} onClose={() => setExpandedItem(null)} /> */}
     </main>
   );
 }
