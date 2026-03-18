@@ -1,6 +1,11 @@
 import type { Translations } from ".";
 
 export const en: Translations = {
+  devNotice: {
+    title: "Work in progress",
+    description: "This site is still under development. Some pages/features may be incomplete or change.",
+    dismiss: "Dismiss",
+  },
   nav: {
     software: "Software",
     personal: "Personal",

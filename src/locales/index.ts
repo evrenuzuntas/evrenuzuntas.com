@@ -1,6 +1,11 @@
 export type Locale = "tr" | "en";
 
 export type Translations = {
+  devNotice: {
+    title: string;
+    description: string;
+    dismiss: string;
+  };
   nav: {
     software: string;
     personal: string;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { ThemeProvider, LanguageProvider } from "@/components/providers";
+import { DevNoticeBanner } from "@/components/DevNoticeBanner";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -52,7 +53,10 @@ export default function RootLayout({
           </defs>
         </svg>
         <ThemeProvider>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <DevNoticeBanner />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

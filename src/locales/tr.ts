@@ -1,6 +1,11 @@
 import type { Translations } from ".";
 
 export const tr: Translations = {
+  devNotice: {
+    title: "Geliştirme aşamasında",
+    description: "Bu site henüz geliştirme aşamasındadır. Bazı sayfalar/özellikler eksik veya değişebilir.",
+    dismiss: "Kapat",
+  },
   nav: {
     software: "Yazılım",
     personal: "Kişisel",
