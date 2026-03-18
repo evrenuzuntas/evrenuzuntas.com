@@ -10,7 +10,8 @@ import { useLanguage } from "@/components/providers";
 
 const EMAIL = "evrenuzuntas@gmail.com";
 
-const GRID_CLASS = "grid grid-flow-dense grid-cols-[200px_200px] tablet:grid-cols-[200px_200px_200px_200px] gap-4 justify-center desktop:auto-rows-[200px]";
+/* Küçük ekranlarda kutular minmax ile küçülür (392px, ~250px vb.); bento: 4 sütun geniş ekranda */
+const GRID_CLASS = "grid grid-flow-dense grid-cols-[minmax(100px,200px)_minmax(100px,200px)] bento:grid-cols-[200px_200px_200px_200px] gap-4 justify-center desktop:auto-rows-[200px]";
 
 function SectionDivider({ id, icon, label, href }: { id: string; icon: ReactNode; label: string; href?: string }) {
   const content = href ? (

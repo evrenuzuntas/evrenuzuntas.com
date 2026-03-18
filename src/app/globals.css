@@ -41,6 +41,7 @@
   --font-mono: var(--font-geist-mono);
   --font-inter: var(--font-inter);
   --breakpoint-tablet: 800px;
+  --breakpoint-bento: 880px; /* 4 sütun için min: 4×200 + 3×16 gap + padding */
   --breakpoint-desktop: 1200px;
 }
 

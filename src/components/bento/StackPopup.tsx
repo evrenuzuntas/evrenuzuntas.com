@@ -6,8 +6,8 @@ import { X } from "lucide-react";
 import { BentoBox, BentoCard } from "@/components/bento";
 import type { BentoItemData } from "@/constants";
 
-/* Ana sayfayla aynı: birim tam 200px, aralık 16px, iki birim = 416px */
-const POPUP_GRID = "grid grid-flow-dense grid-cols-[200px_200px] gap-4 auto-rows-[200px]";
+/* Küçük ekranda kutular küçülsün diye minmax; geniş ekranda 200px birim */
+const POPUP_GRID = "grid grid-flow-dense grid-cols-[minmax(100px,200px)_minmax(100px,200px)] gap-4 auto-rows-[minmax(100px,200px)]";
 
 type StackPopupProps = {
   open: boolean;
