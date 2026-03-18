@@ -30,7 +30,7 @@ export function BentoBox({ spanX = 1, spanY = 1, href, onClick, className = "", 
     <Tag
       {...tagProps}
       className={[
-        "relative overflow-hidden rounded-[24px] border-t border-foreground/10 shadow-[0_1px_0_0_rgba(0,0,0,0.25)]",
+        "relative overflow-hidden rounded-[24px] bento-box-border",
         "flex flex-col bg-card-from p-4 gap-3 text-foreground/90 text-inherit no-underline",
         aspect,
         "desktop:aspect-auto",

@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import { FaLinkedinIn, FaGithub, FaXTwitter, FaInstagram, FaYoutube, FaTiktok, FaMedium, FaWhatsapp, FaDog, FaFileLines, FaBriefcase } from "react-icons/fa6";
-import { AlignLeft, Navigation, Mail, Globe, MessageCircle, Users, Clock, Eye } from "lucide-react";
+import { AlignLeft, Navigation, Mail, Globe, MessageCircle, Users, Clock, Eye, Layers } from "lucide-react";
 
 type IconEntry = { icon: ComponentType<{ className?: string }>; color: string };
 
@@ -20,6 +20,8 @@ export const ICON_MAP: Record<string, IconEntry> = {
   navigation: { icon: Navigation, color: "text-foreground/60" },
   mail: { icon: Mail, color: "text-foreground/60" },
   website: { icon: Globe, color: "text-foreground/60" },
+  stack: { icon: Layers, color: "text-foreground/60" },
+  stackRed: { icon: Layers, color: "text-[#FF0000]" },
   youtube_comment: { icon: MessageCircle, color: "text-[#FF0000]" },
   subscribers: { icon: Users, color: "text-[#FF0000]" },
   watch_time: { icon: Clock, color: "text-[#FF0000]" },

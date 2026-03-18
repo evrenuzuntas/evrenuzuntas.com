@@ -52,12 +52,52 @@ body {
     color 0.3s ease;
 }
 
+/* Ana sayfa scrollbar gizle (viewport genelde html üzerinde) */
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scrollbar gizle utility (popup vb. overflow alanları) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Bento birim: 200px, aralık 16px, iki birim 416px */
+:root {
+  --bento-unit: 200px;
+  --bento-gap: 16px;
+  --bento-two: 416px; /* 200 + 16 + 200 */
+}
+
+/* Üst çizgi için inset shadow – border yerine, 1px layout kaybı olmasın */
+.bento-box-border {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+[data-theme="light"] .bento-box-border {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.08), inset 0 1px 0 0 rgba(0, 0, 0, 0.06);
+}
+
 /* ── Card shadow utilities (theme-aware) ────────────────────────── */
 .text-shadow-card {
   text-shadow: var(--text-shadow-noimg);
 }
 .sub-shadow-card {
   text-shadow: var(--sub-shadow-noimg);
+}
+
+/* Instagram ikonu: orijinal sarı→turuncu→pembe→mor gradient (layout’taki #instagram-gradient) */
+.icon-instagram-gradient path {
+  fill: url(#instagram-gradient);
 }
 
 /* ── Modal animations ───────────────────────────────────────────── */

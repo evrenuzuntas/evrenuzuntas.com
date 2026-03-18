@@ -32,7 +32,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-hide`}>
         {/* Instagram logo gradient (orijinal sarı→turuncu→pembe→mor) */}
         <svg aria-hidden="true" className="absolute w-0 h-0" focusable="false">
           <defs>

@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useMemo, type ReactNode } from "react";
 import { HeroSection, Footer } from "@/components/sections";
-import { BentoBox, BentoCard, BentoExpandModal } from "@/components/bento";
+import { BentoBox, BentoCard, StackPopup } from "@/components/bento";
 import { BENTO_ITEMS, BOTTOM_ITEMS, SOFTWARE_ITEMS, YOUTUBE_ITEMS, type BentoItemData } from "@/constants";
 import { FaCode, FaYoutube, FaUser } from "react-icons/fa6";
 import { ScrollToTop, ThemeToggle, LanguageToggle } from "@/components/ui";
@@ -10,7 +10,7 @@ import { useLanguage } from "@/components/providers";
 
 const EMAIL = "evrenuzuntas@gmail.com";
 
-const GRID_CLASS = "grid grid-flow-dense grid-cols-[repeat(2,minmax(0,200px))] tablet:grid-cols-[repeat(4,minmax(0,200px))] gap-4 justify-center desktop:auto-rows-[200px]";
+const GRID_CLASS = "grid grid-flow-dense grid-cols-[200px_200px] tablet:grid-cols-[200px_200px_200px_200px] gap-4 justify-center desktop:auto-rows-[200px]";
 
 function SectionDivider({ id, icon, label, href }: { id: string; icon: ReactNode; label: string; href?: string }) {
   const content = href ? (
@@ -34,14 +34,14 @@ function SectionDivider({ id, icon, label, href }: { id: string; icon: ReactNode
   );
 }
 
-function BentoGrid({ items, onExpand, renderItem }: { items: BentoItemData[]; onExpand: (item: BentoItemData) => void; renderItem?: (item: BentoItemData) => ReactNode }) {
+function BentoGrid({ items, renderItem }: { items: BentoItemData[]; renderItem?: (item: BentoItemData) => ReactNode }) {
   return (
     <div className={GRID_CLASS}>
       {items.map((item) =>
         renderItem ? (
           renderItem(item)
         ) : (
-          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link} onClick={!item.link ? () => onExpand(item) : undefined}>
+          <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
             <BentoCard {...item} />
           </BentoBox>
         ),
@@ -52,7 +52,7 @@ function BentoGrid({ items, onExpand, renderItem }: { items: BentoItemData[]; on
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
-  const [expandedItem, setExpandedItem] = useState<BentoItemData | null>(null);
+  const [stackPopup, setStackPopup] = useState<{ title?: string; items: BentoItemData[] } | null>(null);
   const { t, localize } = useLanguage();
 
   const softwareItems = useMemo(() => localize(SOFTWARE_ITEMS), [localize]);
@@ -82,19 +82,42 @@ export default function Home() {
       <HeroSection />
 
       <SectionDivider id="software" icon={<FaCode className="text-[#42A5F5] text-2xl" />} label={t.section.softwareDevelopment} />
-      <BentoGrid items={softwareItems} onExpand={setExpandedItem} />
+      <BentoGrid
+        items={softwareItems}
+        renderItem={(item) =>
+          item.stackItems?.length ? (
+            <BentoBox
+              key={item.id}
+              spanX={item.spanX}
+              spanY={item.spanY}
+              onClick={() => setStackPopup({ title: item.label, items: item.stackItems! })}
+            >
+              <BentoCard {...item} />
+            </BentoBox>
+          ) : (
+            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
+              <BentoCard {...item} />
+            </BentoBox>
+          )
+        }
+      />
+      <StackPopup
+        open={!!stackPopup}
+        onClose={() => setStackPopup(null)}
+        title={stackPopup?.title}
+        items={stackPopup?.items ?? []}
+      />
 
       <SectionDivider id="personal" icon={<FaUser className="text-[#AB47BC] text-2xl" />} label={t.section.personal} />
       <BentoGrid
         items={bentoItems}
-        onExpand={setExpandedItem}
         renderItem={(item) =>
           item.id === "contact" ? (
             <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} onClick={copyEmail}>
               <BentoCard {...item} sublabel={copied ? t.copied : item.sublabel} />
             </BentoBox>
           ) : (
-            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link} onClick={!item.link ? () => setExpandedItem(item) : undefined}>
+            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
               <BentoCard {...item} />
             </BentoBox>
           )
@@ -102,19 +125,36 @@ export default function Home() {
       />
 
       <SectionDivider id="youtube" icon={<FaYoutube className="text-[#FF0000] text-2xl" />} label={t.section.youtube} href="https://youtube.com/@evoloper0" />
-      <BentoGrid items={youtubeItems} onExpand={setExpandedItem} />
+      <BentoGrid
+        items={youtubeItems}
+        renderItem={(item) =>
+          item.stackItems?.length ? (
+            <BentoBox
+              key={item.id}
+              spanX={item.spanX}
+              spanY={item.spanY}
+              onClick={() => setStackPopup({ title: item.label, items: item.stackItems! })}
+            >
+              <BentoCard {...item} />
+            </BentoBox>
+          ) : (
+            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
+              <BentoCard {...item} />
+            </BentoBox>
+          )
+        }
+      />
 
       <div className="flex items-center gap-4 my-10 max-w-[832px] mx-auto">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-foreground/20 to-foreground/20" />
         <div className="flex-1 h-px bg-gradient-to-l from-transparent via-foreground/20 to-foreground/20" />
       </div>
-      <BentoGrid items={bottomItems} onExpand={setExpandedItem} />
+      <BentoGrid items={bottomItems} />
 
       <Footer />
       <ScrollToTop />
       <ThemeToggle />
       <LanguageToggle />
-      <BentoExpandModal item={expandedItem} onClose={() => setExpandedItem(null)} />
     </main>
   );
 }

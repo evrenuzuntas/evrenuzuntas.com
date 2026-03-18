@@ -44,16 +44,23 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const t = TRANSLATIONS[locale];
 
   const localize = useCallback(
-    (items: BentoItemData[]): BentoItemData[] =>
-      items.map((item) => {
+    (items: BentoItemData[]): BentoItemData[] => {
+      function mapItem(item: BentoItemData): BentoItemData {
         const override = t.bentoOverrides[item.id];
-        if (!override) return item;
-        return {
-          ...item,
-          ...(override.label !== undefined && { label: override.label }),
-          ...(override.sublabel !== undefined && { sublabel: override.sublabel }),
-        };
-      }),
+        const base = override
+          ? {
+              ...item,
+              ...(override.label !== undefined && { label: override.label }),
+              ...(override.sublabel !== undefined && { sublabel: override.sublabel }),
+            }
+          : item;
+        if (base.stackItems?.length) {
+          return { ...base, stackItems: base.stackItems.map(mapItem) };
+        }
+        return base;
+      }
+      return items.map(mapItem);
+    },
     [t],
   );
 
