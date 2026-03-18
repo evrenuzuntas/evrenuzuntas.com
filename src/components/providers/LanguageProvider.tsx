@@ -51,7 +51,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
           ? {
               ...item,
               ...(override.label !== undefined && { label: override.label }),
-              ...(override.sublabel !== undefined && { sublabel: override.sublabel }),
+              ...(override.subLabel !== undefined && { subLabel: override.subLabel }),
             }
           : item;
         if (base.stackItems?.length) {

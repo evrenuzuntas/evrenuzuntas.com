@@ -9,7 +9,7 @@ export type BentoItemData = {
   stat?: string;
   image?: string;
   label?: string;
-  sublabel?: string;
+  subLabel?: string;
   link?: string;
   /** Aynı yapıdaki alt itemler – tıklanınca popup’ta listelenir (max 2 sütun) */
   stackItems?: BentoItemData[];

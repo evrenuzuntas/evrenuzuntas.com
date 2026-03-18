@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { ICON_MAP, type BentoItemData } from "@/constants";
 import { Skeleton } from "@/components/ui/Skeleton";
 
-export function BentoCard({ icon, bigIcon, stat, image, label, sublabel, link, expanded }: BentoItemData & { expanded?: boolean }) {
+export function BentoCard({ icon, bigIcon, stat, image, label, subLabel, link, expanded }: BentoItemData & { expanded?: boolean }) {
   const [loaded, setLoaded] = useState(false);
   const iconKey = bigIcon ?? icon;
   const iconData = iconKey ? ICON_MAP[iconKey] : null;
@@ -32,11 +32,11 @@ export function BentoCard({ icon, bigIcon, stat, image, label, sublabel, link, e
         </header>
       )}
 
-      {(label || sublabel) && (
+      {(label || subLabel) && (
         <div className="relative z-10 flex-1 flex flex-col min-h-0 justify-end overflow-hidden text-left">
           <div className="flex flex-col gap-0.5 min-w-0">
-            {label && <span className={`text-sm break-words ${expanded ? "" : "line-clamp-5"} ${hasImage ? "font-semibold text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.8)]" : "font-medium text-foreground/90 text-shadow-card"}`}>{label}</span>}
-            {sublabel && <span className={`text-xs break-words ${expanded ? "" : "line-clamp-2"} ${hasImage ? "text-white/80 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]" : "text-foreground/50 sub-shadow-card"}`}>{sublabel}</span>}
+            {label && <span className={`font-inter text-sm font-bold break-words ${expanded ? "" : "line-clamp-5"} ${hasImage ? "text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.8)]" : "text-foreground/90 text-shadow-card"}`}>{label}</span>}
+            {subLabel && <span className={`font-inter text-xs break-words ${expanded ? "" : "line-clamp-2"} ${hasImage ? "text-white/80 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]" : "text-foreground/50 sub-shadow-card"}`}>{subLabel}</span>}
           </div>
         </div>
       )}

@@ -14,23 +14,22 @@ export const tr: Translations = {
   copied: "Kopyalandı!",
   bentoOverrides: {
     photo: { label: "Birlikte çalışalım" },
-    joy: { sublabel: "En İyi Arkadaşım" },
+    joy: { subLabel: "En İyi Arkadaşım" },
     "bio-text": {
-      label:
-        "5+ yıl deneyime sahip Senior Front-end/Fullstack geliştiriciyim ve @evoloper YouTube kanalının yaratıcısıyım. Next.js ile modern web uygulamaları geliştirirken teknoloji, otomobil ve ekipman tutkumu yaratıcı içeriklerle paylaşıyorum. Ekranın ötesinde tutkulu bir kampçı ve en yeni teknolojilerin takipçisiyim.",
+      label: "5+ yıl deneyime sahip Senior Front-end/Fullstack geliştiriciyim ve @evoloper YouTube kanalının yaratıcısıyım. Next.js ile modern web uygulamaları geliştirirken teknoloji, otomobil ve ekipman tutkumu yaratıcı içeriklerle paylaşıyorum. Ekranın ötesinde tutkulu bir kampçı ve en yeni teknolojilerin takipçisiyim.",
     },
     Camping: { label: "Ilgaz Kamp" },
     Family: { label: "Ailem" },
 
     bio: {
       label: "Senior Geliştirici & İçerik Üreticisi",
-      sublabel: "Yeni roller ve lokasyonlara açığım.",
+      subLabel: "Yeni roller ve lokasyonlara açığım.",
     },
     CV: { label: "Özgeçmişime Göz Atın" },
     maisPort: { label: "MAIS PORT - Kurumsal Web Platformu" },
     ikam: { label: "IKAM - İkame araç platformu" },
 
-    "youtube-subs": { label: "Abone Ol", sublabel: "YouTube kanalıma git" },
+    "youtube-subs": { label: "Abone Ol", subLabel: "YouTube kanalıma git" },
     "youtube-1": { label: "@evoloper YouTube kanalıma git" },
     "youtube-2": { label: "@evoloper YouTube kanalıma git" },
     "youtube-3": { label: "@evoloper YouTube kanalıma git" },

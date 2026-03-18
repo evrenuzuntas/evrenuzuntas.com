@@ -39,6 +39,7 @@
   --color-ring-badge: var(--ring-badge);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
   --breakpoint-tablet: 800px;
   --breakpoint-desktop: 1200px;
 }

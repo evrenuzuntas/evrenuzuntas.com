@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { ThemeProvider, LanguageProvider } from "@/components/providers";
 import "./globals.css";
 
@@ -11,6 +11,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -32,7 +38,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-hide`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased scrollbar-hide`}>
         {/* Instagram logo gradient (orijinal sarı→turuncu→pembe→mor) */}
         <svg aria-hidden="true" className="absolute w-0 h-0" focusable="false">
           <defs>

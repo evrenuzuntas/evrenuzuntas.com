@@ -86,12 +86,7 @@ export default function Home() {
         items={softwareItems}
         renderItem={(item) =>
           item.stackItems?.length ? (
-            <BentoBox
-              key={item.id}
-              spanX={item.spanX}
-              spanY={item.spanY}
-              onClick={() => setStackPopup({ title: item.label, items: item.stackItems! })}
-            >
+            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} onClick={() => setStackPopup({ title: item.label, items: item.stackItems! })}>
               <BentoCard {...item} />
             </BentoBox>
           ) : (
@@ -101,12 +96,7 @@ export default function Home() {
           )
         }
       />
-      <StackPopup
-        open={!!stackPopup}
-        onClose={() => setStackPopup(null)}
-        title={stackPopup?.title}
-        items={stackPopup?.items ?? []}
-      />
+      <StackPopup open={!!stackPopup} onClose={() => setStackPopup(null)} title={stackPopup?.title} items={stackPopup?.items ?? []} />
 
       <SectionDivider id="personal" icon={<FaUser className="text-[#AB47BC] text-2xl" />} label={t.section.personal} />
       <BentoGrid
@@ -114,7 +104,7 @@ export default function Home() {
         renderItem={(item) =>
           item.id === "contact" ? (
             <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} onClick={copyEmail}>
-              <BentoCard {...item} sublabel={copied ? t.copied : item.sublabel} />
+              <BentoCard {...item} subLabel={copied ? t.copied : item.subLabel} />
             </BentoBox>
           ) : (
             <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} href={item.link}>
@@ -129,12 +119,7 @@ export default function Home() {
         items={youtubeItems}
         renderItem={(item) =>
           item.stackItems?.length ? (
-            <BentoBox
-              key={item.id}
-              spanX={item.spanX}
-              spanY={item.spanY}
-              onClick={() => setStackPopup({ title: item.label, items: item.stackItems! })}
-            >
+            <BentoBox key={item.id} spanX={item.spanX} spanY={item.spanY} onClick={() => setStackPopup({ title: item.label, items: item.stackItems! })}>
               <BentoCard {...item} />
             </BentoBox>
           ) : (

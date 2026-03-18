@@ -5,7 +5,7 @@ export const SOFTWARE_ITEMS: BentoItemData[] = [
     id: "bio",
     bigIcon: "opentowork",
     label: "Senior Dev & Tech Creator",
-    sublabel: " Open for new roles & new locations.",
+    subLabel: " Open for new roles & new locations.",
     stat: "Open to work",
   },
   {
@@ -30,6 +30,7 @@ export const SOFTWARE_ITEMS: BentoItemData[] = [
   {
     id: "renew",
     spanX: 2,
+    spanY: 2,
     bigIcon: "stack",
     label: "Experiences",
     image: "/software/screenshot-2026-03-12-07-52-47.png",
@@ -81,5 +82,18 @@ export const SOFTWARE_ITEMS: BentoItemData[] = [
         stat: "10000",
       },
     ],
+  },
+  {
+    id: "Medium",
+    bigIcon: "medium",
+    link: "https://medium.com/@evoloper",
+    label: "Medium / evoloper",
+    subLabel: "API kelimesi yazılım dünyasında neredeyse her yerde karşımıza çıkıyor. Ama ilginç olan şu: Herkes API diyor ama herkes aynı şeyi anlamıyor.",
+  },
+  {
+    id: "bio-text",
+    spanX: 2,
+    icon: "text",
+    label: "I'm a Senior Front-end/Fullstack developer with 5+ years of experience and the creator of the @evoloper YouTube channel. I build modern web applications using Next.js while sharing my passion for technology, cars, and gear through creative content. Beyond the screen, I'm an avid camper and a lifelong explorer of the latest gadgets.",
   },
 ];

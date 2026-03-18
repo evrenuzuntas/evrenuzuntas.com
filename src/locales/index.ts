@@ -12,7 +12,7 @@ export type Translations = {
     youtube: string;
   };
   copied: string;
-  bentoOverrides: Record<string, { label?: string; sublabel?: string }>;
+  bentoOverrides: Record<string, { label?: string; subLabel?: string }>;
 };
 
 export { tr } from "./tr";
